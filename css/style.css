@@ -744,9 +744,15 @@ section {
 /* Responsive Slider */
 @media (max-width: 991.98px) {
     .hero-slide-wrapper {
+        min-height: 580px;
         height: auto;
         padding: 4rem 0;
         text-align: center;
+    }
+    .carousel-control-prev, .carousel-control-next {
+        opacity: 1 !important;
+        top: 400px !important;
+        transform: none !important;
     }
     .hero-image-container {
         max-width: 500px;
@@ -768,6 +774,7 @@ section {
     .carousel-control-prev, .carousel-control-next {
         width: 44px;
         height: 44px;
+        top: 320px !important;
     }
     .carousel-control-prev { left: 10px; }
     .carousel-control-next { right: 10px; }
