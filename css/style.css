@@ -376,6 +376,21 @@ section {
     border: 1px solid rgba(5, 150, 105, 0.1);
 }
 
+/* Pricing Tag Premium - Standardized */
+.price-tag-premium {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #fff !important;
+    color: #000 !important;
+    padding: 5px 12px;
+    border-radius: 8px;
+    font-weight: 800;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    z-index: 10;
+}
+
 .premium-badge.secondary {
     background: #f8fafc;
     color: #475569;
@@ -1085,9 +1100,70 @@ section {
     border-bottom: none !important;
 }
 
-.no-scroll {
-    overflow: hidden !important;
+.filter-toggle-btn {
+    transition: var(--transition);
 }
+
+.filter-toggle-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(124, 58, 237, 0.4);
+}
+
+.modal-content {
+    overflow: hidden;
+}
+
+#filterModal .modal-content {
+    background: #fff;
+    border: none;
+}
+
+#filterModal .form-label {
+    letter-spacing: 0.1em;
+    font-weight: 800;
+    color: var(--s-400);
+}
+
+#filterModal .form-check-label {
+    color: var(--s-700);
+    font-weight: 500;
+}
+
+#filterModal .form-check-input {
+    width: 1.15em;
+    height: 1.15em;
+    margin-top: 0.2em;
+    cursor: pointer;
+}
+
+#filterModal .form-select {
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+#filterModal .form-select:hover {
+    background-color: #f1f5f9 !important;
+}
+
+#filterPriceRange {
+    height: 6px;
+    background: #e2e8f0;
+    border-radius: 5px;
+    outline: none;
+    accent-color: var(--p-600);
+}
+
+#filterModal .btn-primary {
+    font-size: 0.9rem;
+    letter-spacing: 0.02em;
+}
+
+@media (max-width: 575.98px) {
+    #filterModal .modal-dialog {
+        margin: 0.5rem;
+    }
+}
+
 
 /* Desktop Filter Sticky */
 @media (min-width: 992px) {

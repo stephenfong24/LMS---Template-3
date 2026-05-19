@@ -38,7 +38,7 @@
                             <i class="bi bi-search position-absolute top-50 start-0 translate-middle-y ms-3 text-muted"></i>
                             <input type="text" class="form-control ps-5 border-0 shadow-sm" placeholder="Search courses..." style="background: var(--s-50); height: 46px; border-radius: var(--radius-md);">
                         </div>
-                        <button class="btn btn-primary d-lg-none shadow-sm filter-toggle-btn" style="border-radius: var(--radius-md); width: 46px; height: 46px; border: 0;">
+                        <button class="btn btn-primary shadow-sm filter-toggle-btn" data-bs-toggle="modal" data-bs-target="#filterModal" style="border-radius: var(--radius-md); width: 46px; height: 46px; border: 0;">
                             <i class="bi bi-funnel text-white"></i>
                         </button>
                     </div>
@@ -49,82 +49,28 @@
 
     <main class="container py-4">
         <div class="row g-4">
-            <!-- Sidebar Filters -->
-            <div class="col-lg-3">
-                <div id="filterSidebar" class="card p-3 border-0 shadow-sm bg-alt mobile-filter-sidebar">
-                    <div class="d-flex justify-content-between align-items-center mb-3">
-                        <h6 class="fw-bold mb-0 d-flex align-items-center gap-2">
-                            <i class="bi bi-filter"></i> Filters
-                        </h6>
-                        <button class="btn btn-link link-dark p-0 border-0 d-lg-none" id="btn-close-filters" style="text-decoration: none;">
-                            <i class="bi bi-x-lg" style="font-size: 1.25rem;"></i>
-                        </button>
-                    </div>
-                    
-                    <div class="mb-4">
-                        <label class="form-label" style="font-size: 10px; letter-spacing: 0.1em;">Category</label>
-                        <div class="form-check mb-1">
-                            <input class="form-check-input" type="checkbox" value="" id="cat1" checked>
-                            <label class="form-check-label small" for="cat1">All Categories</label>
-                        </div>
-                        <div class="form-check mb-1">
-                            <input class="form-check-input" type="checkbox" value="" id="cat2">
-                            <label class="form-check-label small" for="cat2">Design</label>
-                        </div>
-                        <div class="form-check mb-1">
-                            <input class="form-check-input" type="checkbox" value="" id="cat3">
-                            <label class="form-check-label small" for="cat3">Data Science</label>
-                        </div>
-                    </div>
-                    
-                    <div class="mb-4">
-                        <label class="form-label" style="font-size: 10px; letter-spacing: 0.1em;">Difficulty</label>
-                        <select class="form-select form-control" style="height: 40px; font-size: var(--fs-sm);">
-                            <option selected>All Levels</option>
-                            <option>Beginner</option>
-                            <option>Intermediate</option>
-                            <option>Advanced</option>
-                        </select>
-                    </div>
-                    
-                    <div class="mb-4">
-                        <label class="form-label" style="font-size: 10px; letter-spacing: 0.1em;">Price Range</label>
-                        <input type="range" class="form-range" min="0" max="1000" id="priceRange">
-                        <div class="d-flex justify-content-between text-muted" style="font-size: 0.7rem;">
-                            <span>RM 0</span>
-                            <span>RM 1,000+</span>
-                        </div>
-                    </div>
-                    
-                    <button class="btn btn-sm btn-primary w-100 mb-2">Apply Filters</button>
-                    <button id="resetFiltersBtn" class="btn btn-sm btn-link w-100 text-muted small text-decoration-none">Reset</button>
-                </div>
-            </div>
-
-            <!-- Course Grid -->
-            <div class="col-lg-9">
+            <!-- Course Grid (Full Width) -->
+            <div class="col-12">
                 <div class="d-flex flex-wrap justify-content-between align-items-center mb-4 gap-3">
                     <p class="text-muted small mb-0" id="showing-count">Showing 12 courses</p>
-                    <div class="d-flex gap-2">
+                    <div class="d-flex gap-2 align-items-center">
                         <select class="form-select form-control" style="height: 36px; width: 140px; font-size: var(--fs-xs);">
                             <option selected>Newest First</option>
                             <option>Most Popular</option>
                         </select>
+                        <button class="btn btn-light border-0 d-none d-lg-flex align-items-center gap-2 px-3" data-bs-toggle="modal" data-bs-target="#filterModal" style="height: 36px; font-size: var(--fs-xs); background: var(--s-50);">
+                            <i class="bi bi-filter"></i> Filters
+                        </button>
                     </div>
                 </div>
 
                 <div id="course-container" class="row g-3">
                     <!-- Course Card 1 -->
-                    <div class="col-md-6 course-item">
+                    <div class="col-md-6 col-lg-4 course-item">
                         <div class="card h-100 card-hover">
                             <div class="course-image-wrapper">
                                 <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&q=80&w=800" alt="UX Strategy">
-                                <div class="position-absolute top-0 start-0 m-3 z-2">
-                                    <span class="badge bg-white text-dark py-1 px-3 fw-bold rounded-pill shadow-sm" style="font-size: 0.6rem; text-transform: uppercase;">Advanced</span>
-                                </div>
-                                <div class="position-absolute bottom-0 end-0 m-3 z-2">
-                                    <span class="badge bg-primary text-white py-1 px-3 fw-bold rounded-pill shadow-sm" style="font-size: 0.65rem;">RM 499.00</span>
-                                </div>
+                                <span class="price-tag-premium">RM 499.00</span>
                             </div>
                             <div class="card-body p-3">
                                 <div class="d-flex align-items-center gap-2 mb-2">
@@ -132,19 +78,20 @@
                                     <span class="text-muted" style="font-size: 10px;">• 24 Lessons</span>
                                 </div>
                                 <h6 class="fw-bold mb-2 tracking-tight">UX Strategy Immersive</h6>
-                                <p class="text-muted mb-3 x-small">Master the intersection of business goals and user needs in a production environment.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="d-flex align-items-center gap-2">
-                                        <img src="https://i.pravatar.cc/32?u=mentor1" class="rounded-circle border border-2 border-white shadow-sm" width="24">
-                                        <span class="fw-bold x-small">Alex Rivera</span>
-                                    </div>
-                                    <div class="d-flex align-items-center gap-1">
-                                        <i class="bi bi-star-fill text-warning x-small"></i>
-                                        <span class="fw-bold x-small">4.9</span>
-                                    </div>
-                                </div>
+                                <p class="text-muted mb-1 x-small">Master the intersection of business goals and user needs in a production environment.</p>
                             </div>
                             <div class="card-footer-custom p-3 bg-white border-top-0">
+                                <div class="course-card-rating-wrapper mb-2">
+                                    <div class="star-rating me-2">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-half"></i>
+                                    </div>
+                                    <span class="rating-score">4.9</span>
+                                    <span class="review-count ms-1">(89)</span>
+                                </div>
                                 <div class="d-flex flex-column flex-lg-row gap-2">
                                     <a href="#" class="btn btn-primary btn-sm purchase-btn w-100" 
                                        data-id="ux-strat-1"
@@ -159,36 +106,30 @@
                     </div>
                     
                     <!-- Course Card 2 -->
-                    <div class="col-md-6 course-item">
+                    <div class="col-md-6 col-lg-4 course-item">
                         <div class="card h-100">
                             <div class="course-image-wrapper">
                                 <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" alt="Data Analytics">
-                                <span class="badge bg-white text-dark position-absolute top-0 end-0 m-2 shadow-sm px-2 py-1 fw-bold z-2 small" style="font-size: 0.7rem;">RM 599.00</span>
+                                <span class="price-tag-premium">RM 599.00</span>
                             </div>
                             <div class="card-body">
                                 <div class="mb-2">
-                                    <span class="text-primary fw-bold" style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.05em;">Data / Intermediate</span>
+                                    <span class="text-primary fw-bold" style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.05em;">Data Science</span>
                                 </div>
                                 <h5 class="fw-bold mb-2">Data Analytics Pro</h5>
-                                <p class="text-muted small mb-3">From Excel to SQL and PowerBI. Learn to tell stories with data that drive decisions.</p>
-                                <div class="d-flex align-items-center gap-2 mb-0">
-                                    <img src="https://i.pravatar.cc/32?u=mentor2" class="rounded-circle" width="24">
-                                    <span class="small text-muted" style="font-size: 0.75rem;">with <span class="text-dark fw-medium">Sarah Chen</span></span>
-                                </div>
+                                <p class="text-muted small mb-0">From Excel to SQL and PowerBI. Learn to tell stories with data that drive decisions.</p>
                             </div>
-                            <div class="card-footer-custom px-3 pb-3">
-                                <div class="course-card-rating-wrapper mb-3 d-flex justify-content-between align-items-center">
-                                    <div class="d-flex align-items-center">
-                                        <div class="star-rating me-2">
-                                            <i class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-fill"></i>
-                                        </div>
-                                        <span class="rating-score">4.8</span>
-                                        <span class="review-count ms-1">(242)</span>
+                            <div class="card-footer-custom p-3 bg-white border-top-0">
+                                <div class="course-card-rating-wrapper mb-2">
+                                    <div class="star-rating me-2">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
                                     </div>
+                                    <span class="rating-score">4.8</span>
+                                    <span class="review-count ms-1">(242)</span>
                                 </div>
                                 <div class="d-flex flex-column flex-lg-row gap-2">
                                     <a href="#" class="btn btn-primary btn-sm purchase-btn w-100" 
@@ -197,31 +138,38 @@
                                        data-price="599.00"
                                        data-instructor="Sarah Chen"
                                        data-img="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800">Enroll Now</a>
-                                    <a href="/pages/course-details.html?id=data-analytics" class="btn btn-outline-light text-dark border btn-sm w-100">Details</a>
+                                    <a href="/pages/course-details.html?id=data-analytics" class="btn btn-sm btn-light border-0 w-100" style="background: var(--s-50); color: var(--s-900);">Details</a>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Course Card 3 -->
-                    <div class="col-md-6 course-item">
+                    <div class="col-md-6 col-lg-4 course-item">
                         <div class="card h-100">
                             <div class="course-image-wrapper">
                                 <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" alt="Growth Marketing">
-                                <span class="badge bg-white text-dark position-absolute top-0 end-0 m-2 shadow-sm px-2 py-1 fw-bold z-2 small" style="font-size: 0.7rem;">RM 399.00</span>
+                                <span class="price-tag-premium">RM 399.00</span>
                             </div>
                             <div class="card-body">
                                 <div class="mb-2">
-                                    <span class="text-primary fw-bold" style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.05em;">Marketing / All Levels</span>
+                                    <span class="text-primary fw-bold" style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.05em;">Marketing</span>
                                 </div>
                                 <h5 class="fw-bold mb-2">Growth Marketing Lab</h5>
-                                <p class="text-muted small mb-3">Experimentation frameworks that the top 1% of growth teams use to scale products.</p>
-                                <div class="d-flex align-items-center gap-2 mb-0">
-                                    <img src="https://i.pravatar.cc/32?u=mentor3" class="rounded-circle" width="24">
-                                    <span class="small text-muted" style="font-size: 0.75rem;">with <span class="text-dark fw-medium">Marcus Miller</span></span>
-                                </div>
+                                <p class="text-muted small mb-0">Experimentation frameworks that the top 1% of growth teams use to scale products.</p>
                             </div>
                             <div class="card-footer-custom p-3 bg-white border-top-0">
+                                <div class="course-card-rating-wrapper mb-2">
+                                    <div class="star-rating me-2">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-half"></i>
+                                    </div>
+                                    <span class="rating-score">4.7</span>
+                                    <span class="review-count ms-1">(112)</span>
+                                </div>
                                 <div class="d-flex flex-column flex-lg-row gap-2">
                                     <a href="#" class="btn btn-primary btn-sm purchase-btn w-100" 
                                        data-id="growth-3"
@@ -236,24 +184,31 @@
                     </div>
 
                     <!-- Course Card 4 -->
-                    <div class="col-md-6 course-item">
+                    <div class="col-md-6 col-lg-4 course-item">
                         <div class="card h-100">
                             <div class="course-image-wrapper">
                                 <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800" alt="Product Management">
-                                <span class="badge bg-white text-dark position-absolute top-0 end-0 m-2 shadow-sm px-2 py-1 fw-bold z-2 small" style="font-size: 0.7rem;">RM 649.00</span>
+                                <span class="price-tag-premium">RM 649.00</span>
                             </div>
                             <div class="card-body">
                                 <div class="mb-2">
-                                    <span class="text-primary fw-bold" style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.05em;">Business / Mid</span>
+                                    <span class="text-primary fw-bold" style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.05em;">Business</span>
                                 </div>
                                 <h5 class="fw-bold mb-2">Product Manager Sprint</h5>
-                                <p class="text-muted small mb-3">Sharpen your roadmap thinking and communication scenarios for modern product teams.</p>
-                                <div class="d-flex align-items-center gap-2 mb-0">
-                                    <img src="https://i.pravatar.cc/32?u=mentor4" class="rounded-circle" width="24">
-                                    <span class="small text-muted" style="font-size: 0.75rem;">with <span class="text-dark fw-medium">James Wilson</span></span>
-                                </div>
+                                <p class="text-muted small mb-0">Sharpen your roadmap thinking and communication scenarios for modern product teams.</p>
                             </div>
                             <div class="card-footer-custom p-3 bg-white border-top-0">
+                                <div class="course-card-rating-wrapper mb-2">
+                                    <div class="star-rating me-2">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                    </div>
+                                    <span class="rating-score">4.8</span>
+                                    <span class="review-count ms-1">(112)</span>
+                                </div>
                                 <div class="d-flex flex-column flex-lg-row gap-2">
                                     <a href="#" class="btn btn-primary btn-sm purchase-btn w-100" 
                                        data-id="pm-4"
@@ -268,24 +223,31 @@
                     </div>
 
                     <!-- Course Card 5 -->
-                    <div class="col-md-6 course-item">
+                    <div class="col-md-6 col-lg-4 course-item">
                       <div class="card h-100">
                           <div class="course-image-wrapper">
                               <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=800" alt="Frontend Dev">
-                              <span class="badge bg-white text-dark position-absolute top-0 end-0 m-2 shadow-sm px-2 py-1 fw-bold z-2 small" style="font-size: 0.7rem;">RM 649.00</span>
+                              <span class="price-tag-premium">RM 649.00</span>
                           </div>
                           <div class="card-body">
                               <div class="mb-2">
-                                  <span class="text-primary fw-bold" style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.05em;">Development / Mid</span>
+                                  <span class="text-primary fw-bold" style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.05em;">Development</span>
                               </div>
                               <h5 class="fw-bold mb-2">Frontend Mastery</h5>
-                              <p class="text-muted small mb-3">Build modern web applications with React, Tailwind, and TypeScript.</p>
-                              <div class="d-flex align-items-center gap-2 mb-0">
-                                  <img src="https://i.pravatar.cc/32?u=mentor5" class="rounded-circle" width="24">
-                                  <span class="small text-muted" style="font-size: 0.75rem;">with <span class="text-dark fw-medium">Elena Gomez</span></span>
-                              </div>
+                              <p class="text-muted small mb-0">Build modern web applications with React, Tailwind, and TypeScript.</p>
                           </div>
                             <div class="card-footer-custom p-3 bg-white border-top-0">
+                                <div class="course-card-rating-wrapper mb-2">
+                                    <div class="star-rating me-2">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                    </div>
+                                    <span class="rating-score">4.9</span>
+                                    <span class="review-count ms-1">(186)</span>
+                                </div>
                                 <div class="d-flex flex-column flex-lg-row gap-2">
                                     <a href="#" class="btn btn-primary btn-sm purchase-btn w-100" 
                                        data-id="fe-5"
@@ -300,24 +262,31 @@
                     </div>
 
                     <!-- Course Card 6 -->
-                    <div class="col-md-6 course-item">
+                    <div class="col-md-6 col-lg-4 course-item">
                       <div class="card h-100">
                           <div class="course-image-wrapper">
                               <img src="https://images.unsplash.com/photo-1550439062-609e1531270e?auto=format&fit=crop&q=80&w=800" alt="Cloud Computing">
-                              <span class="badge bg-white text-dark position-absolute top-0 end-0 m-2 shadow-sm px-2 py-1 fw-bold z-2 small" style="font-size: 0.7rem;">RM 799.00</span>
+                              <span class="price-tag-premium">RM 799.00</span>
                           </div>
                           <div class="card-body">
                               <div class="mb-2">
-                                  <span class="text-primary fw-bold" style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.05em;">Infrastructure / Advanced</span>
+                                  <span class="text-primary fw-bold" style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.05em;">Infrastructure</span>
                               </div>
                               <h5 class="fw-bold mb-2">Cloud Architecture</h5>
-                              <p class="text-muted small mb-3">Architect scalable systems on AWS, GCP, and Azure with best practices.</p>
-                              <div class="d-flex align-items-center gap-2 mb-0">
-                                  <img src="https://i.pravatar.cc/32?u=mentor6" class="rounded-circle" width="24">
-                                  <span class="small text-muted" style="font-size: 0.75rem;">with <span class="text-dark fw-medium">David Park</span></span>
-                              </div>
+                              <p class="text-muted small mb-0">Architect scalable systems on AWS, GCP, and Azure with best practices.</p>
                           </div>
                             <div class="card-footer-custom p-3 bg-white border-top-0">
+                                <div class="course-card-rating-wrapper mb-2">
+                                    <div class="star-rating me-2">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                    </div>
+                                    <span class="rating-score">4.8</span>
+                                    <span class="review-count ms-1">(95)</span>
+                                </div>
                                 <div class="d-flex flex-column flex-lg-row gap-2">
                                     <a href="#" class="btn btn-primary btn-sm purchase-btn w-100" 
                                        data-id="cloud-6"
@@ -332,24 +301,31 @@
                     </div>
 
                     <!-- Course Card 7 -->
-                    <div class="col-md-6 course-item">
+                    <div class="col-md-6 col-lg-4 course-item">
                       <div class="card h-100">
                           <div class="course-image-wrapper">
                               <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800" alt="Cybersecurity">
-                              <span class="badge bg-white text-dark position-absolute top-0 end-0 m-2 shadow-sm px-2 py-1 fw-bold z-2 small" style="font-size: 0.7rem;">RM 899.00</span>
+                              <span class="price-tag-premium">RM 899.00</span>
                           </div>
                           <div class="card-body">
                               <div class="mb-2">
-                                  <span class="text-primary fw-bold" style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.05em;">Security / Beginner</span>
+                                  <span class="text-primary fw-bold" style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.05em;">Security</span>
                               </div>
                               <h5 class="fw-bold mb-2">Cybersecurity Ops</h5>
-                              <p class="text-muted small mb-3">Defend organizations against cyber threats and learn ethical hacking basics.</p>
-                              <div class="d-flex align-items-center gap-2 mb-0">
-                                  <img src="https://i.pravatar.cc/32?u=mentor7" class="rounded-circle" width="24">
-                                  <span class="small text-muted" style="font-size: 0.75rem;">with <span class="text-dark fw-medium">Rachel Foster</span></span>
-                              </div>
+                              <p class="text-muted small mb-0">Defend organizations against cyber threats and learn ethical hacking basics.</p>
                           </div>
                             <div class="card-footer-custom p-3 bg-white border-top-0">
+                                <div class="course-card-rating-wrapper mb-2">
+                                    <div class="star-rating me-2">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-half"></i>
+                                    </div>
+                                    <span class="rating-score">4.6</span>
+                                    <span class="review-count ms-1">(112)</span>
+                                </div>
                                 <div class="d-flex flex-column flex-lg-row gap-2">
                                     <a href="#" class="btn btn-primary btn-sm purchase-btn w-100" 
                                        data-id="sec-7"
@@ -364,24 +340,31 @@
                     </div>
 
                     <!-- Course Card 8 -->
-                    <div class="col-md-6 course-item">
+                    <div class="col-md-6 col-lg-4 course-item">
                       <div class="card h-100">
                           <div class="course-image-wrapper">
                               <img src="https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?auto=format&fit=crop&q=80&w=800" alt="AI Fundamentals">
-                              <span class="badge bg-white text-dark position-absolute top-0 end-0 m-2 shadow-sm px-2 py-1 fw-bold z-2 small" style="font-size: 0.7rem;">RM 549.00</span>
+                              <span class="price-tag-premium">RM 549.00</span>
                           </div>
                           <div class="card-body">
                               <div class="mb-2">
-                                  <span class="text-primary fw-bold" style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.05em;">AI / Intermediate</span>
+                                  <span class="text-primary fw-bold" style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.05em;">AI</span>
                               </div>
                               <h5 class="fw-bold mb-2">Generative AI Lab</h5>
-                              <p class="text-muted small mb-3">Apply LLMs and diffusion models to solve real-world problems today.</p>
-                              <div class="d-flex align-items-center gap-2 mb-0">
-                                  <img src="https://i.pravatar.cc/32?u=mentor8" class="rounded-circle" width="24">
-                                  <span class="small text-muted" style="font-size: 0.75rem;">with <span class="text-dark fw-medium">Victor Hugo</span></span>
-                              </div>
+                              <p class="text-muted small mb-0">Apply LLMs and diffusion models to solve real-world problems today.</p>
                           </div>
                             <div class="card-footer-custom p-3 bg-white border-top-0">
+                                <div class="course-card-rating-wrapper mb-2">
+                                    <div class="star-rating me-2">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                    </div>
+                                    <span class="rating-score">4.9</span>
+                                    <span class="review-count ms-1">(64)</span>
+                                </div>
                                 <div class="d-flex flex-column flex-lg-row gap-2">
                                     <a href="#" class="btn btn-primary btn-sm purchase-btn w-100" 
                                        data-id="ai-8"
@@ -396,24 +379,31 @@
                     </div>
 
                     <!-- Course Card 9 -->
-                    <div class="col-md-6 course-item">
+                    <div class="col-md-6 col-lg-4 course-item">
                       <div class="card h-100">
                           <div class="course-image-wrapper">
                               <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800" alt="Blockchain">
-                              <span class="badge bg-white text-dark position-absolute top-0 end-0 m-2 shadow-sm px-2 py-1 fw-bold z-2 small" style="font-size: 0.7rem;">RM 699.00</span>
+                              <span class="price-tag-premium">RM 699.00</span>
                           </div>
                           <div class="card-body">
                               <div class="mb-2">
-                                  <span class="text-primary fw-bold" style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.05em;">Tech / Advanced</span>
+                                  <span class="text-primary fw-bold" style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.05em;">Tech</span>
                               </div>
                               <h5 class="fw-bold mb-2">Blockchain Dev</h5>
-                              <p class="text-muted small mb-3">Write smart contracts and build decentralized apps on Ethereum.</p>
-                              <div class="d-flex align-items-center gap-2 mb-0">
-                                  <img src="https://i.pravatar.cc/32?u=mentor9" class="rounded-circle" width="24">
-                                  <span class="small text-muted" style="font-size: 0.75rem;">with <span class="text-dark fw-medium">Sophie Lee</span></span>
-                              </div>
+                              <p class="text-muted small mb-0">Write smart contracts and build decentralized apps on Ethereum.</p>
                           </div>
                             <div class="card-footer-custom p-3 bg-white border-top-0">
+                                <div class="course-card-rating-wrapper mb-2">
+                                    <div class="star-rating me-2">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                    </div>
+                                    <span class="rating-score">4.7</span>
+                                    <span class="review-count ms-1">(42)</span>
+                                </div>
                                 <div class="d-flex flex-column flex-lg-row gap-2">
                                     <a href="#" class="btn btn-primary btn-sm purchase-btn w-100" 
                                        data-id="bc-9"
@@ -428,24 +418,31 @@
                     </div>
 
                     <!-- Course Card 10 -->
-                    <div class="col-md-6 course-item">
+                    <div class="col-md-6 col-lg-4 course-item">
                       <div class="card h-100">
                           <div class="course-image-wrapper">
                               <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800" alt="Agile">
-                              <span class="badge bg-white text-dark position-absolute top-0 end-0 m-2 shadow-sm px-2 py-1 fw-bold z-2 small" style="font-size: 0.7rem;">RM 399.00</span>
+                              <span class="price-tag-premium">RM 399.00</span>
                           </div>
                           <div class="card-body">
                               <div class="mb-2">
-                                  <span class="text-primary fw-bold" style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.05em;">Leadership / Mid</span>
+                                  <span class="text-primary fw-bold" style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.05em;">Leadership</span>
                               </div>
                               <h5 class="fw-bold mb-2">Agile Leadership</h5>
-                              <p class="text-muted small mb-3">Master Scrum and Kanban to lead high-performing cross-functional teams.</p>
-                              <div class="d-flex align-items-center gap-2 mb-0">
-                                  <img src="https://i.pravatar.cc/32?u=mentor10" class="rounded-circle" width="24">
-                                  <span class="small text-muted" style="font-size: 0.75rem;">with <span class="text-dark fw-medium">Tom Harris</span></span>
-                              </div>
+                              <p class="text-muted small mb-0">Master Scrum and Kanban to lead high-performing cross-functional teams.</p>
                           </div>
                             <div class="card-footer-custom p-3 bg-white border-top-0">
+                                <div class="course-card-rating-wrapper mb-2">
+                                    <div class="star-rating me-2">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                    </div>
+                                    <span class="rating-score">4.8</span>
+                                    <span class="review-count ms-1">(156)</span>
+                                </div>
                                 <div class="d-flex flex-column flex-lg-row gap-2">
                                     <a href="#" class="btn btn-primary btn-sm purchase-btn w-100" 
                                        data-id="agile-10"
@@ -460,24 +457,31 @@
                     </div>
 
                     <!-- Course Card 11 -->
-                    <div class="col-md-6 course-item">
+                    <div class="col-md-6 col-lg-4 course-item">
                       <div class="card h-100">
                           <div class="course-image-wrapper">
                               <img src="https://images.unsplash.com/photo-1551033406-611cf9a28f67?auto=format&fit=crop&q=80&w=800" alt="Motion Graphics">
-                              <span class="badge bg-white text-dark position-absolute top-0 end-0 m-2 shadow-sm px-2 py-1 fw-bold z-2 small" style="font-size: 0.7rem;">RM 449.00</span>
+                              <span class="price-tag-premium">RM 449.00</span>
                           </div>
                           <div class="card-body">
                               <div class="mb-2">
-                                  <span class="text-primary fw-bold" style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.05em;">Design / Intermediate</span>
+                                  <span class="text-primary fw-bold" style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.05em;">Design</span>
                               </div>
                               <h5 class="fw-bold mb-2">Motion Graphics</h5>
-                              <p class="text-muted small mb-3">Bring your designs to life with After Effects and animation principles.</p>
-                              <div class="d-flex align-items-center gap-2 mb-0">
-                                  <img src="https://i.pravatar.cc/32?u=mentor11" class="rounded-circle" width="24">
-                                  <span class="small text-muted" style="font-size: 0.75rem;">with <span class="text-dark fw-medium">Lydia Smith</span></span>
-                              </div>
+                              <p class="text-muted small mb-0">Bring your designs to life with After Effects and animation principles.</p>
                           </div>
                             <div class="card-footer-custom p-3 bg-white border-top-0">
+                                <div class="course-card-rating-wrapper mb-2">
+                                    <div class="star-rating me-2">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                    </div>
+                                    <span class="rating-score">4.9</span>
+                                    <span class="review-count ms-1">(210)</span>
+                                </div>
                                 <div class="d-flex flex-column flex-lg-row gap-2">
                                     <a href="#" class="btn btn-primary btn-sm purchase-btn w-100" 
                                        data-id="motion-11"
@@ -492,24 +496,31 @@
                     </div>
 
                     <!-- Course Card 12 -->
-                    <div class="col-md-6 course-item">
+                    <div class="col-md-6 col-lg-4 course-item">
                       <div class="card h-100">
                           <div class="course-image-wrapper">
                               <img src="https://images.unsplash.com/photo-1542626991-cbc4e32524cc?auto=format&fit=crop&q=80&w=800" alt="Business Strategy">
-                              <span class="badge bg-white text-dark position-absolute top-0 end-0 m-2 shadow-sm px-2 py-1 fw-bold z-2 small" style="font-size: 0.7rem;">RM 599.00</span>
+                              <span class="price-tag-premium">RM 599.00</span>
                           </div>
                           <div class="card-body">
                               <div class="mb-2">
-                                  <span class="text-primary fw-bold" style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.05em;">Business / Advanced</span>
+                                  <span class="text-primary fw-bold" style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.05em;">Business</span>
                               </div>
                               <h5 class="fw-bold mb-2">Business Strategy</h5>
-                              <p class="text-muted small mb-3">Master market analysis and strategic planning to grow any organization.</p>
-                              <div class="d-flex align-items-center gap-2 mb-0">
-                                  <img src="https://i.pravatar.cc/32?u=mentor12" class="rounded-circle" width="24">
-                                  <span class="small text-muted" style="font-size: 0.75rem;">with <span class="text-dark fw-medium">Robert King</span></span>
-                              </div>
+                              <p class="text-muted small mb-0">Master market analysis and strategic planning to grow any organization.</p>
                           </div>
                             <div class="card-footer-custom p-3 bg-white border-top-0">
+                                <div class="course-card-rating-wrapper mb-2">
+                                    <div class="star-rating me-2">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                    </div>
+                                    <span class="rating-score">4.9</span>
+                                    <span class="review-count ms-1">(124)</span>
+                                </div>
                                 <div class="d-flex flex-column flex-lg-row gap-2">
                                     <a href="#" class="btn btn-primary btn-sm purchase-btn w-100" 
                                        data-id="biz-12"
@@ -536,6 +547,58 @@
 
     <div id="footer-placeholder"></div>
 
+    <!-- Filter Modal -->
+    <div class="modal fade" id="filterModal" tabindex="-1" aria-labelledby="filterModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg" style="border-radius: var(--radius-lg);">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title fw-bold" id="filterModalLabel">Course Filters</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="mb-4">
+                        <label class="form-label" style="font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;">Category</label>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="checkbox" value="" id="filterCat1" checked>
+                                    <label class="form-check-label small" for="filterCat1">All Categories</label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="checkbox" value="" id="filterCat2">
+                                    <label class="form-check-label small" for="filterCat2">Design</label>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="checkbox" value="" id="filterCat3">
+                                    <label class="form-check-label small" for="filterCat3">Data Science</label>
+                                </div>
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="checkbox" value="" id="filterCat4">
+                                    <label class="form-check-label small" for="filterCat4">Marketing</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="form-label" style="font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;">Price Range</label>
+                        <input type="range" class="form-range" min="0" max="1000" id="filterPriceRange">
+                        <div class="d-flex justify-content-between text-muted" style="font-size: 0.7rem;">
+                            <span>RM 0</span>
+                            <span>RM 1,000+</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer border-0 pt-0 flex-column">
+                    <button type="button" class="btn btn-primary w-100 mb-2" style="height: 46px; border-radius: var(--radius-md);" data-bs-dismiss="modal">Apply Filters</button>
+                    <button type="button" class="btn btn-link link-muted small text-decoration-none" id="modalResetBtn">Reset All</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -544,7 +607,7 @@
     
     <script>
         $(document).ready(function() {
-            const itemsPerPage = 4;
+            const itemsPerPage = 6;
             const $items = $('.course-item');
             const totalItems = $items.length;
             const totalPages = Math.ceil(totalItems / itemsPerPage);
@@ -608,6 +671,11 @@
                 if (page >= 1 && page <= totalPages && page !== currentPage) {
                     showPage(page);
                 }
+            });
+
+            // Modal Reset Button
+            $('#modalResetBtn').on('click', function() {
+                window.location.reload();
             });
 
             // Initial load
