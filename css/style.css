@@ -1041,15 +1041,41 @@ section {
     box-shadow: 0 15px 30px -5px rgba(124, 58, 237, 0.5);
 }
 
-/* Floating Elements Refinement */
-.floating-card-1, .floating-card-2, .floating-card-3 {
-    border: 1px solid rgba(255,255,255,0.1);
-    backdrop-filter: blur(10px);
+/* Curriculum Typography Enhancements */
+.curriculum-label {
+    font-size: 11.5px !important;
+    letter-spacing: 0.06em !important;
+    text-transform: uppercase;
+    color: var(--s-500) !important;
+    font-weight: 600 !important;
 }
 
-.premium-card-gradient {
-    background: linear-gradient(135deg, var(--s-900) 0%, #1e1b4b 100%) !important;
-    border: 1px solid rgba(255,255,255,0.1) !important;
+.curriculum-accordion .accordion-button {
+    font-size: 15.5px !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.015em !important;
+    line-height: 1.25 !important;
+    color: #1E293B !important;
+    box-shadow: none !important;
+}
+
+/* Remove default Bootstrap focus shadow */
+.curriculum-accordion .accordion-button:focus {
+    box-shadow: none !important;
+    border-color: transparent !important;
+}
+
+.curriculum-accordion .accordion-button:not(.collapsed) {
+    color: var(--p-600) !important;
+    background-color: transparent !important;
+}
+
+.curriculum-accordion .accordion-item {
+    border-bottom: 1px solid var(--s-100) !important;
+}
+
+.curriculum-accordion .accordion-item:last-child {
+    border-bottom: none !important;
 }
 
 
