@@ -33,9 +33,14 @@
                     <p class="text-muted small mb-0 fw-medium">Expert-led courses designed for your career growth.</p>
                 </div>
                 <div class="col-lg-5">
-                    <div class="search-box position-relative">
-                        <i class="bi bi-search position-absolute top-50 start-0 translate-middle-y ms-3 text-muted"></i>
-                        <input type="text" class="form-control ps-5 border-0 shadow-sm" placeholder="Search courses..." style="background: var(--s-50); height: 46px; border-radius: var(--radius-md);">
+                    <div class="d-flex gap-2">
+                        <div class="search-box position-relative flex-grow-1">
+                            <i class="bi bi-search position-absolute top-50 start-0 translate-middle-y ms-3 text-muted"></i>
+                            <input type="text" class="form-control ps-5 border-0 shadow-sm" placeholder="Search courses..." style="background: var(--s-50); height: 46px; border-radius: var(--radius-md);">
+                        </div>
+                        <button class="btn btn-primary d-lg-none shadow-sm filter-toggle-btn" style="border-radius: var(--radius-md); width: 46px; height: 46px; border: 0;">
+                            <i class="bi bi-funnel text-white"></i>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -46,10 +51,15 @@
         <div class="row g-4">
             <!-- Sidebar Filters -->
             <div class="col-lg-3">
-                <div class="card p-3 sticky-top border-0 shadow-sm bg-alt" style="top: 90px; border-radius: var(--radius-md);">
-                    <h6 class="fw-bold mb-3 d-flex align-items-center gap-2">
-                        <i class="bi bi-filter"></i> Filters
-                    </h6>
+                <div id="filterSidebar" class="card p-3 border-0 shadow-sm bg-alt mobile-filter-sidebar">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h6 class="fw-bold mb-0 d-flex align-items-center gap-2">
+                            <i class="bi bi-filter"></i> Filters
+                        </h6>
+                        <button class="btn btn-link link-dark p-0 border-0 d-lg-none" id="btn-close-filters" style="text-decoration: none;">
+                            <i class="bi bi-x-lg" style="font-size: 1.25rem;"></i>
+                        </button>
+                    </div>
                     
                     <div class="mb-4">
                         <label class="form-label" style="font-size: 10px; letter-spacing: 0.1em;">Category</label>
@@ -87,7 +97,7 @@
                     </div>
                     
                     <button class="btn btn-sm btn-primary w-100 mb-2">Apply Filters</button>
-                    <button class="btn btn-sm btn-link w-100 text-muted small text-decoration-none">Reset</button>
+                    <button id="resetFiltersBtn" class="btn btn-sm btn-link w-100 text-muted small text-decoration-none">Reset</button>
                 </div>
             </div>
 

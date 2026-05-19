@@ -165,4 +165,69 @@ $(function() {
     $scrollBtn.on('click', function() {
         $('html, body').animate({ scrollTop: 0 }, 600);
     });
+
+    // Mobile Filter Sidebar Toggle
+    const initMobileFilters = () => {
+        const $sidebar = $('#filterSidebar');
+        if (!$sidebar.length) return;
+
+        // Ensure overlay exists
+        if (!$('.filter-overlay').length) {
+            $('body').append('<div class="filter-overlay"></div>');
+        }
+        
+        const $overlay = $('.filter-overlay');
+
+        const openFilters = () => {
+            $sidebar.addClass('active');
+            $overlay.addClass('active');
+            $('body').addClass('filter-open no-scroll');
+        };
+
+        const closeFilters = () => {
+            $sidebar.removeClass('active');
+            $overlay.removeClass('active');
+            $('body').removeClass('filter-open no-scroll');
+        };
+
+        // Bind events directly to elements to avoid delegation issues
+        $('.filter-toggle-btn').off('click').on('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            openFilters();
+        });
+
+        $('#btn-close-filters').off('click').on('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            closeFilters();
+        });
+
+        $overlay.off('click').on('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            closeFilters();
+        });
+
+        // Prevent clicks inside the panel from reaching overlay listener
+        $sidebar.off('click').on('click', function(e) {
+            e.stopPropagation();
+        });
+
+        // Close on Apply button for mobile
+        $sidebar.find('.btn-primary').off('click').on('click', function() {
+            if (window.innerWidth < 992) {
+                closeFilters();
+            }
+        });
+
+        // Reset Filters logic
+        $('#resetFiltersBtn').off('click').on('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            window.location.reload();
+        });
+    };
+
+    initMobileFilters();
 });
