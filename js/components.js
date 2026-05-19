@@ -39,8 +39,20 @@ $(function() {
 
         // Set active nav link based on current path
         const currentPath = window.location.pathname;
-        $('.navbar-nav .nav-link').each(function() {
-            if ($(this).attr('href') === currentPath) {
+        
+        // Helper to normalize paths for comparison
+        const normalizePath = (p) => {
+            if (!p) return '';
+            let normalized = p.replace(/\/$/, ''); // remove trailing slash
+            if (normalized === '') normalized = '/index.html'; // root is index
+            return normalized;
+        };
+
+        const normalizedCurrent = normalizePath(currentPath);
+
+        $('.navbar-nav .nav-link, .mobile-nav-link').each(function() {
+            const href = $(this).attr('href');
+            if (normalizePath(href) === normalizedCurrent) {
                 $(this).addClass('active');
             }
         });

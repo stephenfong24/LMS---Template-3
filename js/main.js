@@ -37,15 +37,6 @@ $(function() {
 
     console.log('Elevate Academy Interaction Engine Ready');
 
-    // Highlight active link in mobile nav
-    const currentPath = window.location.pathname;
-    $('.mobile-nav-link').each(function() {
-        if ($(this).attr('href') === currentPath) {
-            $(this).addClass('active');
-        } else if (currentPath === '/' && $(this).attr('href') === '/index.html') {
-            $(this).addClass('active');
-        }
-    });
 
     // Mobile Navigation Toggle
     const $mobileNav = $('#mobileNav');

@@ -936,7 +936,7 @@ section {
     padding: 1.5rem; /* More compact padding */
     display: flex;
     flex-direction: column;
-    border-radius: var(--radius-lg) 0 0 var(--radius-lg); /* Rounded drawer edge */
+    border-radius: 0; /* Removed border-radius as requested */
 }
 
 #mobileNav.active {
@@ -966,8 +966,19 @@ section {
     color: var(--p-600);
 }
 
-.mobile-nav-link:hover i, .mobile-nav-link.active i {
+.mobile-nav-link.active {
+    background: var(--p-50) !important;
+    color: var(--p-600) !important;
+    box-shadow: none;
+    font-weight: 700;
+}
+
+.mobile-nav-link:hover i {
     color: var(--p-600);
+}
+
+.mobile-nav-link.active i {
+    color: var(--p-600) !important;
 }
 
 .mobile-divider {
