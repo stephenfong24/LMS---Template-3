@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses | Elevate Academy</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="bg-light-alt">
+
+    <div id="navbar-placeholder"></div>
+
+    <header class="bg-white py-4 border-bottom">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-2" style="font-size: var(--fs-xs);">
+                    <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Courses</li>
+                </ol>
+            </nav>
+            <div class="row align-items-center g-3">
+                <div class="col-lg-7">
+                    <span class="premium-badge mb-2">Catalog</span>
+                    <h2 class="fw-bold mb-1">Develop your skills</h2>
+                    <p class="text-muted small mb-0">Choose certificates, bootcamps, or focused tracks designed for modern professionals.</p>
+                </div>
+                <div class="col-lg-5 text-lg-end">
+                    <div class="d-flex flex-wrap gap-1 justify-content-lg-end pt-2">
+                        <button class="btn btn-sm btn-primary">All</button>
+                        <button class="btn btn-sm btn-light border">Design</button>
+                        <button class="btn btn-sm btn-light border">Data Science</button>
+                        <button class="btn btn-sm btn-light border">Marketing</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container py-4">
+        <div class="row g-4">
+            <!-- Sidebar Filters -->
+            <div class="col-lg-3">
+                <div class="card p-3 sticky-top border-0 shadow-sm bg-alt" style="top: 90px; border-radius: var(--radius-md);">
+                    <h6 class="fw-bold mb-3 d-flex align-items-center gap-2">
+                        <i class="bi bi-filter"></i> Filters
+                    </h6>
+                    
+                    <div class="mb-4">
+                        <label class="form-label" style="font-size: 10px; letter-spacing: 0.1em;">Category</label>
+                        <div class="form-check mb-1">
+                            <input class="form-check-input" type="checkbox" value="" id="cat1" checked>
+                            <label class="form-check-label small" for="cat1">All Categories</label>
+                        </div>
+                        <div class="form-check mb-1">
+                            <input class="form-check-input" type="checkbox" value="" id="cat2">
+                            <label class="form-check-label small" for="cat2">Design</label>
+                        </div>
+                        <div class="form-check mb-1">
+                            <input class="form-check-input" type="checkbox" value="" id="cat3">
+                            <label class="form-check-label small" for="cat3">Data Science</label>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="form-label" style="font-size: 10px; letter-spacing: 0.1em;">Difficulty</label>
+                        <select class="form-select form-control" style="height: 40px; font-size: var(--fs-sm);">
+                            <option selected>All Levels</option>
+                            <option>Beginner</option>
+                            <option>Intermediate</option>
+                            <option>Advanced</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="form-label" style="font-size: 10px; letter-spacing: 0.1em;">Price Range</label>
+                        <input type="range" class="form-range" min="0" max="1000" id="priceRange">
+                        <div class="d-flex justify-content-between text-muted" style="font-size: 0.7rem;">
+                            <span>RM 0</span>
+                            <span>RM 1,000+</span>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-sm btn-primary w-100 mb-2">Apply Filters</button>
+                    <button class="btn btn-sm btn-link w-100 text-muted small text-decoration-none">Reset</button>
+                </div>
+            </div>
+
+            <!-- Course Grid -->
+            <div class="col-lg-9">
+                <div class="d-flex flex-wrap justify-content-between align-items-center mb-4 gap-3">
+                    <p class="text-muted small mb-0">Showing <span class="text-dark fw-bold">12</span> courses</p>
+                    <div class="d-flex gap-2">
+                        <select class="form-select form-control" style="height: 36px; width: 140px; font-size: var(--fs-xs);">
+                            <option selected>Newest First</option>
+                            <option>Most Popular</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row g-3">
+                    <!-- Course Card 1 -->
+                    <div class="col-md-6 reveal">
+                        <div class="card h-100">
+                            <div class="course-image-wrapper">
+                                <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&q=80&w=800" alt="UX Strategy">
+                                <span class="badge bg-white text-dark position-absolute top-0 end-0 m-2 shadow-sm px-2 py-1 fw-bold z-2 small" style="font-size: 0.7rem;">RM 499.00</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="mb-2">
+                                    <span class="text-primary fw-bold" style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.05em;">Design / Advanced</span>
+                                </div>
+                                <h5 class="fw-bold mb-2">UX Strategy Immersive</h5>
+                                <p class="text-muted small mb-3">Master the intersection of business goals and user needs in a production environment.</p>
+                                <div class="d-flex align-items-center gap-2 mb-0">
+                                    <img src="https://i.pravatar.cc/32?u=mentor1" class="rounded-circle" width="24">
+                                    <span class="small text-muted" style="font-size: 0.75rem;">with <span class="text-dark fw-medium">Alex Rivera</span></span>
+                                </div>
+                            </div>
+                            <div class="card-footer-custom d-flex justify-content-between align-items-center">
+                                <div class="course-card-rating-wrapper">
+                                    <div class="star-rating">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                    </div>
+                                    <span class="rating-score">4.9</span>
+                                    <span class="review-count">(156)</span>
+                                </div>
+                                <a href="/pages/course-details.html?id=ux-strategy" class="btn btn-sm btn-light">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Course Card 2 -->
+                    <div class="col-md-6 reveal">
+                        <div class="card h-100">
+                            <div class="course-image-wrapper">
+                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" alt="Data Analytics">
+                                <span class="badge bg-white text-dark position-absolute top-0 end-0 m-2 shadow-sm px-2 py-1 fw-bold z-2 small" style="font-size: 0.7rem;">RM 599.00</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="mb-2">
+                                    <span class="text-primary fw-bold" style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.05em;">Data / Intermediate</span>
+                                </div>
+                                <h5 class="fw-bold mb-2">Data Analytics Pro</h5>
+                                <p class="text-muted small mb-3">From Excel to SQL and PowerBI. Learn to tell stories with data that drive decisions.</p>
+                                <div class="d-flex align-items-center gap-2 mb-0">
+                                    <img src="https://i.pravatar.cc/32?u=mentor2" class="rounded-circle" width="24">
+                                    <span class="small text-muted" style="font-size: 0.75rem;">with <span class="text-dark fw-medium">Sarah Chen</span></span>
+                                </div>
+                            </div>
+                            <div class="card-footer-custom d-flex justify-content-between align-items-center">
+                                <div class="course-card-rating-wrapper">
+                                    <div class="star-rating">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                    </div>
+                                    <span class="rating-score">4.8</span>
+                                    <span class="review-count">(242)</span>
+                                </div>
+                                <a href="/pages/course-details.html?id=data-analytics" class="btn btn-sm btn-light">Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course Card 3 -->
+                    <div class="col-md-6 reveal">
+                        <div class="card h-100">
+                            <div class="course-image-wrapper">
+                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" alt="Growth Marketing">
+                                <span class="badge bg-white text-dark position-absolute top-0 end-0 m-2 shadow-sm px-2 py-1 fw-bold z-2 small" style="font-size: 0.7rem;">RM 399.00</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="mb-2">
+                                    <span class="text-primary fw-bold" style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.05em;">Marketing / All Levels</span>
+                                </div>
+                                <h5 class="fw-bold mb-2">Growth Marketing Lab</h5>
+                                <p class="text-muted small mb-3">Experimentation frameworks that the top 1% of growth teams use to scale products.</p>
+                                <div class="d-flex align-items-center gap-2 mb-0">
+                                    <img src="https://i.pravatar.cc/32?u=mentor3" class="rounded-circle" width="24">
+                                    <span class="small text-muted" style="font-size: 0.75rem;">with <span class="text-dark fw-medium">Marcus Miller</span></span>
+                                </div>
+                            </div>
+                            <div class="card-footer-custom d-flex justify-content-between align-items-center">
+                                <div class="course-card-rating-wrapper">
+                                    <div class="star-rating">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-half"></i>
+                                    </div>
+                                    <span class="rating-score">4.7</span>
+                                    <span class="review-count">(89)</span>
+                                </div>
+                                <a href="/pages/course-details.html?id=growth-marketing" class="btn btn-sm btn-light">Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course Card 4 -->
+                    <div class="col-md-6 reveal">
+                        <div class="card h-100">
+                            <div class="course-image-wrapper">
+                                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800" alt="Product Management">
+                                <span class="badge bg-white text-dark position-absolute top-0 end-0 m-2 shadow-sm px-2 py-1 fw-bold z-2 small" style="font-size: 0.7rem;">RM 649.00</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="mb-2">
+                                    <span class="text-primary fw-bold" style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.05em;">Business / Mid</span>
+                                </div>
+                                <h5 class="fw-bold mb-2">Product Manager Sprint</h5>
+                                <p class="text-muted small mb-3">Sharpen your roadmap thinking and communication scenarios for modern product teams.</p>
+                                <div class="d-flex align-items-center gap-2 mb-0">
+                                    <img src="https://i.pravatar.cc/32?u=mentor4" class="rounded-circle" width="24">
+                                    <span class="small text-muted" style="font-size: 0.75rem;">with <span class="text-dark fw-medium">James Wilson</span></span>
+                                </div>
+                            </div>
+                            <div class="card-footer-custom d-flex justify-content-between align-items-center">
+                                <div class="course-card-rating-wrapper">
+                                    <div class="star-rating">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                    </div>
+                                    <span class="rating-score">4.8</span>
+                                    <span class="review-count">(112)</span>
+                                </div>
+                                <a href="/pages/course-details.html?id=product-management" class="btn btn-sm btn-light">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <nav class="mt-5" aria-label="Page navigation">
+                    <ul class="pagination pagination-sm justify-content-center">
+                        <li class="page-item disabled">
+                            <a class="page-link border-0 rounded-circle mx-1" href="#" tabindex="-1" aria-disabled="true"><i class="bi bi-chevron-left"></i></a>
+                        </li>
+                        <li class="page-item active"><a class="page-link border-0 rounded-circle mx-1" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link border-0 rounded-circle mx-1" href="#">2</a></li>
+                        <li class="page-item">
+                            <a class="page-link border-0 rounded-circle mx-1" href="#"><i class="bi bi-chevron-right"></i></a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/components.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>

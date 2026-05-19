@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elevate Academy | Master In-Demand Skills</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <!-- Navbar Wrapper -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Hero Slider Section -->
+    <section class="hero-slider-section position-relative overflow-hidden bg-white p-0">
+        <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-pause="hover">
+            <!-- Indicators -->
+            <div class="carousel-indicators mb-4">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+            </div>
+
+            <div class="carousel-inner">
+                <!-- Slide 1: Online Learning -->
+                <div class="carousel-item active" data-bs-interval="5000">
+                    <div class="hero-slide-wrapper">
+                        <div class="container h-100">
+                            <div class="row align-items-center h-100 g-4 g-lg-5">
+                                <div class="col-lg-6 hero-content-col">
+                                    <div class="animate-text">
+                                        <span class="premium-badge mb-3">Modern Learning Platform</span>
+                                        <h1 class="fw-bold mb-3 display-4">Master in-demand skills with guided online training</h1>
+                                        <p class="text-muted mb-4 pe-lg-5 fs-lg">
+                                            Build confidence through practical projects, live mentorship, and flexible study pathways designed for modern professionals.
+                                        </p>
+                                        <div class="d-flex flex-wrap gap-3">
+                                            <a href="/pages/courses.html" class="btn btn-primary btn-lg px-5">Explore Courses</a>
+                                            <a href="/pages/register.html" class="btn btn-light btn-lg px-5 shadow-sm">Start Free</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 hero-image-col">
+                                    <div class="position-relative hero-image-container">
+                                        <div class="blob-bg"></div>
+                                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=1200" alt="Online Learning" class="img-fluid hero-img">
+                                        <!-- Floating Elements -->
+                                        <div class="floating-card-1 shadow-premium">
+                                            <div class="d-flex align-items-center gap-3">
+                                                <div class="icon-box bg-success text-white">
+                                                    <i class="bi bi-check-lg"></i>
+                                                </div>
+                                                <div>
+                                                    <h6 class="mb-0 fw-bold small">Live Mentorship</h6>
+                                                    <p class="text-muted mb-0 x-small">Feedback in &lt; 24h</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2: Professional Certification -->
+                <div class="carousel-item" data-bs-interval="5000">
+                    <div class="hero-slide-wrapper slide-bg-alt">
+                        <div class="container h-100">
+                            <div class="row align-items-center h-100 g-4 g-lg-5">
+                                <div class="col-lg-6 hero-content-col">
+                                    <div class="animate-text">
+                                        <span class="premium-badge secondary mb-3">Professional Certification</span>
+                                        <h1 class="fw-bold mb-3 display-4">Get certified by industry leaders and top experts</h1>
+                                        <p class="text-muted mb-4 pe-lg-5 fs-lg">
+                                            Our dual-certificate programs provide the edge you need to stand out in the competitive job market.
+                                        </p>
+                                        <div class="d-flex flex-wrap gap-3">
+                                            <a href="/pages/courses.html" class="btn btn-primary btn-lg px-5">View Certificates</a>
+                                            <a href="/pages/about.html" class="btn btn-light btn-lg px-5 shadow-sm">Learn More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 hero-image-col">
+                                    <div class="position-relative hero-image-container">
+                                        <div class="blob-bg blob-secondary"></div>
+                                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=1200" alt="Professional Certification" class="img-fluid hero-img">
+                                        <div class="floating-card-2 shadow-premium">
+                                            <div class="text-center">
+                                                <div class="badge-icon mb-2">🏆</div>
+                                                <h6 class="mb-0 fw-bold small">Industry Recognized</h6>
+                                                <p class="text-muted mb-0 x-small">Verified Credentials</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3: Corporate Training -->
+                <div class="carousel-item" data-bs-interval="5000">
+                    <div class="hero-slide-wrapper">
+                        <div class="container h-100">
+                            <div class="row align-items-center h-100 g-4 g-lg-5">
+                                <div class="col-lg-6 hero-content-col">
+                                    <div class="animate-text">
+                                        <span class="premium-badge mb-3">Corporate Training</span>
+                                        <h1 class="fw-bold mb-3 display-4">Upskill your entire team with tailored solutions</h1>
+                                        <p class="text-muted mb-4 pe-lg-5 fs-lg">
+                                            Empower your workforce with professional development programs designed for your specific business goals.
+                                        </p>
+                                        <div class="d-flex flex-wrap gap-3">
+                                            <a href="/pages/contact.html" class="btn btn-primary btn-lg px-5">Contact Sales</a>
+                                            <a href="/pages/courses.html" class="btn btn-light btn-lg px-5 shadow-sm">For Business</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 hero-image-col">
+                                    <div class="position-relative hero-image-container">
+                                        <div class="blob-bg"></div>
+                                        <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=1200" alt="Corporate Training" class="img-fluid hero-img">
+                                        <div class="floating-card-1 shadow-premium">
+                                            <div class="d-flex align-items-center gap-3">
+                                                <div class="icon-box bg-primary text-white">
+                                                    <i class="bi bi-briefcase"></i>
+                                                </div>
+                                                <div>
+                                                    <h6 class="mb-0 fw-bold small">Enterprise Ready</h6>
+                                                    <p class="text-muted mb-0 x-small">Scalable Learning</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 4: Skill Development -->
+                <div class="carousel-item" data-bs-interval="5000">
+                    <div class="hero-slide-wrapper slide-bg-alt">
+                        <div class="container h-100">
+                            <div class="row align-items-center h-100 g-4 g-lg-5">
+                                <div class="col-lg-6 hero-content-col">
+                                    <div class="animate-text">
+                                        <span class="premium-badge secondary mb-3">Skill Development</span>
+                                        <h1 class="fw-bold mb-3 display-4">Learn at your own pace with bite-sized lessons</h1>
+                                        <p class="text-muted mb-4 pe-lg-5 fs-lg">
+                                            Access over 500+ modules across design, development, marketing and product strategy.
+                                        </p>
+                                        <div class="d-flex flex-wrap gap-3">
+                                            <a href="/pages/courses.html" class="btn btn-primary btn-lg px-5">Start Learning</a>
+                                            <a href="/pages/register.html" class="btn btn-light btn-lg px-5 shadow-sm">Join Free</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 hero-image-col">
+                                    <div class="position-relative hero-image-container">
+                                        <div class="blob-bg blob-secondary"></div>
+                                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=1200" alt="Skill Development" class="img-fluid hero-img">
+                                        <div class="floating-card-3 shadow-premium">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div class="stat-circle">⚡</div>
+                                                <div class="lh-1">
+                                                    <div class="fw-bold fs-5">500+</div>
+                                                    <div class="text-muted x-small">Modules</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 5: Career Growth -->
+                <div class="carousel-item" data-bs-interval="5000">
+                    <div class="hero-slide-wrapper">
+                        <div class="container h-100">
+                            <div class="row align-items-center h-100 g-4 g-lg-5">
+                                <div class="col-lg-6 hero-content-col">
+                                    <div class="animate-text">
+                                        <span class="premium-badge mb-3">Career Growth</span>
+                                        <h1 class="fw-bold mb-3 display-4">Accelerate your career with proven results</h1>
+                                        <p class="text-muted mb-4 pe-lg-5 fs-lg">
+                                            Our students have landed roles at Google, Stripe, Notion, and many other world-leading teams.
+                                        </p>
+                                        <div class="d-flex flex-wrap gap-3">
+                                            <a href="/pages/courses.html" class="btn btn-primary btn-lg px-5">Join Success Stories</a>
+                                            <a href="/pages/contact.html" class="btn btn-light btn-lg px-5 shadow-sm">Talk to Coach</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 hero-image-col">
+                                    <div class="position-relative hero-image-container">
+                                        <div class="blob-bg"></div>
+                                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=1200" alt="Career Growth" class="img-fluid hero-img">
+                                        <div class="floating-card-2 shadow-premium">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div class="av-stack">
+                                                    <img src="https://i.pravatar.cc/32?u=1" class="rounded-circle border border-white" width="24">
+                                                    <img src="https://i.pravatar.cc/32?u=2" class="rounded-circle border border-white ms-n2" width="24">
+                                                    <img src="https://i.pravatar.cc/32?u=3" class="rounded-circle border border-white ms-n2" width="24">
+                                                </div>
+                                                <div class="x-small fw-bold">15k+ Learners</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="control-btn shadow-sm" aria-hidden="true">
+                    <i class="bi bi-arrow-left"></i>
+                </span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="control-btn shadow-sm" aria-hidden="true">
+                    <i class="bi bi-arrow-right"></i>
+                </span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Trusted By Section -->
+    <section class="py-3 border-top border-bottom bg-light">
+        <div class="container">
+            <div class="d-flex justify-content-center align-items-center flex-wrap gap-4 gap-md-5 opacity-40 grayscale" style="font-size: 0.7rem; letter-spacing: 0.15em; font-weight: 800; color: var(--s-500);">
+                <span>GOOGLE</span>
+                <span>STRIPE</span>
+                <span>SPOTIFY</span>
+                <span>NOTION</span>
+                <span>ADOBE</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="bg-white">
+        <div class="container">
+            <div class="row align-items-center mb-5 reveal">
+                <div class="col-lg-5">
+                    <span class="premium-badge">Why Choose Us</span>
+                    <h2 class="fw-bold mb-3">Learning that actually works</h2>
+                </div>
+                <div class="col-lg-6 offset-lg-1">
+                    <p class="text-muted mb-0" style="font-size: var(--fs-md);">We've combined the flexibility of self-paced learning with the accountability of a real-world project environment.</p>
+                </div>
+            </div>
+            
+            <div class="row g-3">
+                <div class="col-md-6 col-lg-3 reveal">
+                    <div class="card h-100 p-4 bg-alt border shadow-none">
+                        <div class="text-primary mb-3">
+                            <i class="bi bi-person-video3 fs-3"></i>
+                        </div>
+                        <h6 class="fw-bold mb-2">Live support</h6>
+                        <p class="text-muted small mb-0">Weekly sessions and office hours help you move through blockers faster.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 reveal">
+                    <div class="card h-100 p-4 bg-alt border shadow-none">
+                        <div class="text-success mb-3">
+                            <i class="bi bi-rocket-takeoff fs-3"></i>
+                        </div>
+                        <h6 class="fw-bold mb-2">Project-based</h6>
+                        <p class="text-muted small mb-0">Work on portfolio-ready assignments that mirror real workplace scenarios.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 reveal">
+                    <div class="card h-100 p-4 bg-alt border shadow-none">
+                        <div class="text-warning mb-3">
+                            <i class="bi bi-calendar-event fs-3"></i>
+                        </div>
+                        <h6 class="fw-bold mb-2">Flexible plans</h6>
+                        <p class="text-muted small mb-0">Study at your pace with guided pathways for intensive bootcamps.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 reveal">
+                    <div class="card h-100 p-4 bg-alt border shadow-none">
+                        <div class="text-dark mb-3">
+                            <i class="bi bi-patch-check fs-3"></i>
+                        </div>
+                        <h6 class="fw-bold mb-2">Career ready</h6>
+                        <p class="text-muted small mb-0">Access resume reviews, mock interviews, and showcase templates.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Courses -->
+    <section class="bg-alt">
+        <div class="container position-relative">
+            <div class="d-flex justify-content-between align-items-center mb-4 reveal">
+                <div>
+                    <span class="premium-badge">Enroll Today</span>
+                    <h3 class="fw-bold mb-0">Popular courses</h3>
+                </div>
+                <div class="d-flex gap-2">
+                    <div class="swiper-button-prev-custom cursor-pointer text-primary border rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                        <i class="bi bi-chevron-left"></i>
+                    </div>
+                    <div class="swiper-button-next-custom cursor-pointer text-primary border rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                        <i class="bi bi-chevron-right"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="swiper coursesSwiper pb-5">
+                <div class="swiper-wrapper">
+                    <!-- Course Item 1 -->
+                    <div class="swiper-slide h-auto">
+                        <div class="card h-100">
+                            <div class="course-image-wrapper">
+                                <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&q=80&w=800" alt="UX Strategy">
+                                <div class="position-absolute top-0 start-0 m-3 z-2">
+                                    <span class="badge bg-white text-dark py-2 px-3 fw-bold rounded-pill shadow-sm" style="font-size: 0.65rem;">Design</span>
+                                </div>
+                                <div class="position-absolute top-0 end-0 m-3 z-2">
+                                    <span class="badge bg-primary text-white py-2 px-3 fw-bold rounded-pill shadow-sm" style="font-size: 0.65rem; border: none;">RM 499.00</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="fw-bold mb-2">UX Strategy Immersive</h5>
+                                <p class="text-muted small mb-0">Master research, information architecture, and UI prototypes with Figma.</p>
+                            </div>
+                            <div class="card-footer-custom d-flex justify-content-between align-items-center">
+                                <div class="course-card-rating-wrapper">
+                                    <div class="star-rating">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                    </div>
+                                    <span class="rating-score">4.9</span>
+                                    <span class="review-count">(324)</span>
+                                </div>
+                                <a href="/pages/course-details.html?id=ux-strategy" class="btn btn-sm btn-light">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Course Item 2 -->
+                    <div class="swiper-slide h-auto">
+                        <div class="card h-100">
+                            <div class="course-image-wrapper">
+                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" alt="Data Analytics">
+                                <div class="position-absolute top-0 start-0 m-3 z-2">
+                                    <span class="badge bg-white text-dark py-2 px-3 fw-bold rounded-pill shadow-sm" style="font-size: 0.65rem;">Data Science</span>
+                                </div>
+                                <div class="position-absolute top-0 end-0 m-3 z-2">
+                                    <span class="badge bg-primary text-white py-2 px-3 fw-bold rounded-pill shadow-sm" style="font-size: 0.65rem; border: none;">RM 599.00</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="fw-bold mb-2">Data Analytics Pro</h5>
+                                <p class="text-muted small mb-0">Master high-level data visualization and SQL for large datasets.</p>
+                            </div>
+                            <div class="card-footer-custom d-flex justify-content-between align-items-center">
+                                <div class="course-card-rating-wrapper">
+                                    <div class="star-rating">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                    </div>
+                                    <span class="rating-score">4.8</span>
+                                    <span class="review-count">(215)</span>
+                                </div>
+                                <a href="/pages/course-details.html?id=data-analytics" class="btn btn-sm btn-light">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Course Item 3 -->
+                    <div class="swiper-slide h-auto">
+                        <div class="card h-100">
+                            <div class="course-image-wrapper">
+                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" alt="Growth Marketing">
+                                <div class="position-absolute top-0 start-0 m-3 z-2">
+                                    <span class="badge bg-white text-dark py-2 px-3 fw-bold rounded-pill shadow-sm" style="font-size: 0.65rem;">Marketing</span>
+                                </div>
+                                <div class="position-absolute top-0 end-0 m-3 z-2">
+                                    <span class="badge bg-primary text-white py-2 px-3 fw-bold rounded-pill shadow-sm" style="font-size: 0.65rem; border: none;">RM 399.00</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="fw-bold mb-2">Growth Marketing Lab</h5>
+                                <p class="text-muted small mb-0">Sharp framework for experimentation, PPC, and campaign reviews.</p>
+                            </div>
+                            <div class="card-footer-custom d-flex justify-content-between align-items-center">
+                                <div class="course-card-rating-wrapper">
+                                    <div class="star-rating">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-half"></i>
+                                    </div>
+                                    <span class="rating-score">4.7</span>
+                                    <span class="review-count">(142)</span>
+                                </div>
+                                <a href="/pages/course-details.html?id=growth-marketing" class="btn btn-sm btn-light">Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course Item 4 -->
+                    <div class="swiper-slide h-auto">
+                        <div class="card h-100">
+                            <div class="course-image-wrapper">
+                                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=800" alt="Frontend Development">
+                                <div class="position-absolute top-0 start-0 m-3 z-2">
+                                    <span class="badge bg-white text-dark py-2 px-3 fw-bold rounded-pill shadow-sm" style="font-size: 0.65rem;">Dev</span>
+                                </div>
+                                <div class="position-absolute top-0 end-0 m-3 z-2">
+                                    <span class="badge bg-primary text-white py-2 px-3 fw-bold rounded-pill shadow-sm" style="font-size: 0.65rem; border: none;">RM 649.00</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="fw-bold mb-2">Frontend Mastery</h5>
+                                <p class="text-muted small mb-0">Build modern web applications with React, Tailwind, and TypeScript.</p>
+                            </div>
+                            <div class="card-footer-custom d-flex justify-content-between align-items-center">
+                                <div class="course-card-rating-wrapper">
+                                    <div class="star-rating">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                    </div>
+                                    <span class="rating-score">4.9</span>
+                                    <span class="review-count">(186)</span>
+                                </div>
+                                <a href="#" class="btn btn-sm btn-light">Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course Item 5 -->
+                    <div class="swiper-slide h-auto">
+                        <div class="card h-100">
+                            <div class="course-image-wrapper">
+                                <img src="https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?auto=format&fit=crop&q=80&w=800" alt="Product Management">
+                                <div class="position-absolute top-0 start-0 m-3 z-2">
+                                    <span class="badge bg-white text-dark py-2 px-3 fw-bold rounded-pill shadow-sm" style="font-size: 0.65rem;">Business</span>
+                                </div>
+                                <div class="position-absolute top-0 end-0 m-3 z-2">
+                                    <span class="badge bg-primary text-white py-2 px-3 fw-bold rounded-pill shadow-sm" style="font-size: 0.65rem; border: none;">RM 459.00</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="fw-bold mb-2">Product Management 101</h5>
+                                <p class="text-muted small mb-0">Learn product discovery, roadmap planning, and stakeholder management.</p>
+                            </div>
+                            <div class="card-footer-custom d-flex justify-content-between align-items-center">
+                                <div class="course-card-rating-wrapper">
+                                    <div class="star-rating">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                    </div>
+                                    <span class="rating-score">4.8</span>
+                                    <span class="review-count">(95)</span>
+                                </div>
+                                <a href="#" class="btn btn-sm btn-light">Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course Item 6 -->
+                    <div class="swiper-slide h-auto">
+                        <div class="card h-100">
+                            <div class="course-image-wrapper">
+                                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800" alt="Python for Data Science">
+                                <div class="position-absolute top-0 start-0 m-3 z-2">
+                                    <span class="badge bg-white text-dark py-2 px-3 fw-bold rounded-pill shadow-sm" style="font-size: 0.65rem;">Data Science</span>
+                                </div>
+                                <div class="position-absolute top-0 end-0 m-3 z-2">
+                                    <span class="badge bg-primary text-white py-2 px-3 fw-bold rounded-pill shadow-sm" style="font-size: 0.65rem; border: none;">RM 349.00</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="fw-bold mb-2">Python for Automation</h5>
+                                <p class="text-muted small mb-0">Automate boring tasks and build powerful scripts using Python.</p>
+                            </div>
+                            <div class="card-footer-custom d-flex justify-content-between align-items-center">
+                                <div class="course-card-rating-wrapper">
+                                    <div class="star-rating">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                    </div>
+                                    <span class="rating-score">4.7</span>
+                                    <span class="review-count">(112)</span>
+                                </div>
+                                <a href="#" class="btn btn-sm btn-light">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+            
+            <div class="text-center mt-2 reveal">
+                <a href="/pages/courses.html" class="btn btn-light px-5 shadow-sm">View All Courses</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats / Trust Section -->
+    <section class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4 text-center">
+                <div class="col-6 col-md-3">
+                    <h3 class="fw-bold mb-0 text-white">98%</h3>
+                    <p class="text-white opacity-75 small mb-0 tracking-wider">Satisfaction</p>
+                </div>
+                <div class="col-6 col-md-3">
+                    <h3 class="fw-bold mb-0 text-white">15k+</h3>
+                    <p class="text-white opacity-75 small mb-0 tracking-wider">Learners</p>
+                </div>
+                <div class="col-6 col-md-3">
+                    <h3 class="fw-bold mb-0 text-white">85+</h3>
+                    <p class="text-white opacity-75 small mb-0 tracking-wider">Expert Mentors</p>
+                </div>
+                <div class="col-6 col-md-3">
+                    <h3 class="fw-bold mb-0 text-white">4.9</h3>
+                    <p class="text-white opacity-75 small mb-0 tracking-wider">App Rating</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="bg-white">
+        <div class="container position-relative">
+            <div class="row justify-content-center mb-5 reveal">
+                <div class="col-lg-7 text-center">
+                    <span class="premium-badge">Success Stories</span>
+                    <h3 class="fw-bold">What our students say</h3>
+                </div>
+            </div>
+            
+            <div class="swiper testimonialsSwiper pb-5">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide h-auto">
+                        <div class="card p-4 h-100 bg-alt border shadow-none">
+                            <div class="text-warning mb-3 small d-flex gap-1" style="font-size: 0.7rem;">
+                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                            </div>
+                            <p class="mb-4 text-dark" style="font-size: var(--fs-base); line-height: 1.6;">"The structure of the UX program made a huge difference. I finally understood how to connect research and strategy."</p>
+                            <div class="d-flex align-items-center gap-3 mt-auto pt-3 border-top">
+                                <img src="https://i.pravatar.cc/56?u=sarah" class="rounded-circle" width="32">
+                                <div>
+                                    <h6 class="mb-0 fw-bold small">Sarah Johnson</h6>
+                                    <p class="small text-muted mb-0" style="font-size: 0.7rem;">UX Designer @Stripe</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide h-auto">
+                        <div class="card p-4 h-100 bg-alt border shadow-none">
+                            <div class="text-warning mb-3 small d-flex gap-1" style="font-size: 0.7rem;">
+                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                            </div>
+                            <p class="mb-4 text-dark" style="font-size: var(--fs-base); line-height: 1.6;">"I went from feeling intimidated to confidently explaining complex metrics to stakeholders. Clear and practical."</p>
+                            <div class="d-flex align-items-center gap-3 mt-auto pt-3 border-top">
+                                <img src="https://i.pravatar.cc/56?u=james" class="rounded-circle" width="32">
+                                <div>
+                                    <h6 class="mb-0 fw-bold small">James Lee</h6>
+                                    <p class="small text-muted mb-0" style="font-size: 0.7rem;">Data Analyst @Spotify</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide h-auto">
+                        <div class="card p-4 h-100 bg-alt border shadow-none">
+                            <div class="text-warning mb-3 small d-flex gap-1" style="font-size: 0.7rem;">
+                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                            </div>
+                            <p class="mb-4 text-dark" style="font-size: var(--fs-base); line-height: 1.6;">"The mix of concise content and polished design made the whole experience feel premium. One of the best."</p>
+                            <div class="d-flex align-items-center gap-3 mt-auto pt-3 border-top">
+                                <img src="https://i.pravatar.cc/56?u=leah" class="rounded-circle" width="32">
+                                <div>
+                                    <h6 class="mb-0 fw-bold small">Leah Morgan</h6>
+                                    <p class="small text-muted mb-0" style="font-size: 0.7rem;">Operator @Notion</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide h-auto">
+                        <div class="card p-4 h-100 bg-alt border shadow-none">
+                            <div class="text-warning mb-3 small d-flex gap-1" style="font-size: 0.7rem;">
+                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                            </div>
+                            <p class="mb-4 text-dark" style="font-size: var(--fs-base); line-height: 1.6;">"The live mentorship sessions were a game changer. Having a real pro look at my work accelerated 10x."</p>
+                            <div class="d-flex align-items-center gap-3 mt-auto pt-3 border-top">
+                                <img src="https://i.pravatar.cc/56?u=mark" class="rounded-circle" width="32">
+                                <div>
+                                    <h6 class="mb-0 fw-bold small">Mark Chen</h6>
+                                    <p class="small text-muted mb-0" style="font-size: 0.7rem;">Product Designer @Google</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide h-auto">
+                        <div class="card p-4 h-100 bg-alt border shadow-none">
+                            <div class="text-warning mb-3 small d-flex gap-1" style="font-size: 0.7rem;">
+                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                            </div>
+                            <p class="mb-4 text-dark" style="font-size: var(--fs-base); line-height: 1.6;">"I've taken many online courses, but this is the only one where I felt like the community was actually alive."</p>
+                            <div class="d-flex align-items-center gap-3 mt-auto pt-3 border-top">
+                                <img src="https://i.pravatar.cc/56?u=elena" class="rounded-circle" width="32">
+                                <div>
+                                    <h6 class="mb-0 fw-bold small">Elena Rodriguez</h6>
+                                    <p class="small text-muted mb-0" style="font-size: 0.7rem;">Digital Marketer @Adobe</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide h-auto">
+                        <div class="card p-4 h-100 bg-alt border shadow-none">
+                            <div class="text-warning mb-3 small d-flex gap-1" style="font-size: 0.7rem;">
+                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                            </div>
+                            <p class="mb-4 text-dark" style="font-size: var(--fs-base); line-height: 1.6;">"Worth every penny. The portfolio pieces I created here were what finally landed me my first junior dev role."</p>
+                            <div class="d-flex align-items-center gap-3 mt-auto pt-3 border-top">
+                                <img src="https://i.pravatar.cc/56?u=alex" class="rounded-circle" width="32">
+                                <div>
+                                    <h6 class="mb-0 fw-bold small">Alex Thompson</h6>
+                                    <p class="small text-muted mb-0" style="font-size: 0.7rem;">Jr. Web Developer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Wrapper -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="/js/components.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>

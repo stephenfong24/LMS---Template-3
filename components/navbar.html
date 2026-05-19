@@ -1,0 +1,83 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top border-bottom">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="/index.html">
+            <div class="bg-primary text-white rounded-3 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                <i class="bi bi-mortarboard-fill"></i>
+            </div>
+            <span class="fw-bold fs-4 ms-2 tracking-tight">Elevate</span>
+        </a>
+        
+        <div class="collapse navbar-collapse d-none d-lg-block">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+                <li class="nav-item">
+                    <a class="nav-link fw-semibold" href="/index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-semibold" href="/pages/courses.html">Courses</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-semibold" href="/pages/about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-semibold" href="/pages/contact.html">Contact</a>
+                </li>
+                <li class="nav-item ms-3">
+                    <a class="btn btn-sm btn-light border px-4" href="/pages/login.html">Login</a>
+                </li>
+                <li class="nav-item ms-2">
+                    <a class="btn btn-sm btn-primary px-4" href="/pages/register.html">Get Started</a>
+                </li>
+            </ul>
+        </div>
+        
+        <button class="border-0 bg-transparent text-dark d-lg-none" type="button" id="mobileNavToggle">
+            <i class="bi bi-list fs-1"></i>
+        </button>
+    </div>
+</nav>
+
+<!-- Mobile Navigation Sidebar -->
+<div class="mobile-nav-overlay" id="navOverlay"></div>
+<div id="mobileNav">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div class="d-flex align-items-center">
+            <div class="bg-primary text-white rounded-3 d-flex align-items-center justify-content-center" style="width: 36px; height: 36px;">
+                <i class="bi bi-mortarboard-fill"></i>
+            </div>
+            <span class="fw-bold fs-5 ms-2 tracking-tight">Elevate</span>
+        </div>
+        <button class="btn-close shadow-none" style="width: 0.8rem; height: 0.8rem;" id="mobileNavClose"></button>
+    </div>
+    
+    <div class="flex-grow-1 overflow-auto">
+        <nav class="d-flex flex-column gap-1">
+            <a class="mobile-nav-link" href="/index.html">
+                <i class="bi bi-house-door"></i>
+                <span>Home</span>
+            </a>
+            <a class="mobile-nav-link" href="/pages/courses.html">
+                <i class="bi bi-book"></i>
+                <span>Courses</span>
+            </a>
+            <a class="mobile-nav-link" href="/pages/about.html">
+                <i class="bi bi-info-circle"></i>
+                <span>About</span>
+            </a>
+            <a class="mobile-nav-link" href="/pages/contact.html">
+                <i class="bi bi-chat-dots"></i>
+                <span>Contact</span>
+            </a>
+        </nav>
+    </div>
+    
+    <div class="mt-auto">
+        <div class="mobile-divider"></div>
+        <div class="d-flex flex-column gap-2">
+            <a class="btn btn-light border w-100" href="/pages/login.html">Login</a>
+            <a class="btn btn-primary w-100" href="/pages/register.html">Get Started</a>
+        </div>
+        <div class="text-center mt-3">
+            <p class="text-muted x-small mb-0">Join 15,000+ professionals</p>
+        </div>
+    </div>
+</div>

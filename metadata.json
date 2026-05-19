@@ -1,0 +1,6 @@
+{
+  "name": "Elevate Academy LMS",
+  "description": "A premium LMS frontend template featuring a modern SaaS design, course management, and dashboard layouts using Bootstrap 5 and jQuery.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
