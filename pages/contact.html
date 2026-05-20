@@ -112,9 +112,12 @@
                             </button>
                         </form>
                         
-                        <div id="successMsg" class="mt-4 p-5 bg-primary bg-opacity-5 text-center rounded-4 d-none border border-primary border-opacity-10">
+                        <div id="successMsg" class="mt-4 p-5 text-center rounded-4 d-none border border-primary border-opacity-10 position-relative" style="background-color: var(--p-50) !important; color: var(--p-900) !important;">
+                            <button type="button" class="btn btn-link position-absolute top-0 end-0 m-3 text-muted hover-text-dark" id="closeSuccessBtn" style="padding: 0; text-decoration: none; border: none; font-size: 1.25rem;">
+                                <i class="bi bi-x-lg"></i>
+                            </button>
                             <div class="h1 mb-3">✨</div>
-                            <h5 class="fw-bold mb-2">Message sent successfully!</h5>
+                            <h5 class="fw-bold mb-2 text-dark">Message sent successfully!</h5>
                             <p class="text-muted small mb-0">Thank you for reaching out. We'll get back to you within 1 business day.</p>
                         </div>
                     </div>
@@ -160,6 +163,14 @@
                         $('#successMsg').removeClass('d-none').hide().fadeIn();
                     });
                 }, 1500);
+            });
+
+            $('#successMsg').on('click', '#closeSuccessBtn', function() {
+                $('#successMsg').fadeOut(300, function() {
+                    $('#contact-form')[0].reset();
+                    $('#sendBtn').html('Send Message').prop('disabled', false);
+                    $('#contact-form').fadeIn();
+                });
             });
         });
     </script>
