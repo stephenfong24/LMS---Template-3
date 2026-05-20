@@ -304,10 +304,11 @@ section {
     letter-spacing: normal !important;
 }
 
-.form-control {
+.form-control,
+.form-select {
     height: 48px;
     background: #fff;
-    border: 1.5px solid #f1f5f9;
+    border: 1.5px solid #cbd5e1; /* Darker premium border for clean focus and legibility */
     border-radius: var(--radius-md);
     font-size: var(--fs-base);
     padding: 0 var(--s-4);
@@ -324,7 +325,8 @@ textarea::placeholder,
     font-weight: 400 !important;
 }
 
-.form-control:focus {
+.form-control:focus,
+.form-select:focus {
     background: #fff;
     border-color: var(--p-600);
     box-shadow: 0 0 0 4px var(--p-50);
