@@ -1069,24 +1069,6 @@ textarea::placeholder,
     margin: 1.5rem 0;
 }
 
-.mobile-nav-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(15, 23, 42, 0.4);
-    backdrop-filter: blur(8px);
-    z-index: 1040;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.mobile-nav-overlay.active {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-}
-
 /* Scroll To Top */
 #scrollTop {
     position: fixed;

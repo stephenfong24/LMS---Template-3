@@ -127,11 +127,20 @@
 <div class="mobile-nav-overlay" id="navOverlay"></div>
 <div id="mobileNav">
     <div class="d-flex justify-content-between align-items-center mb-4">
-        <div class="d-flex align-items-center">
+        <!-- Guest Brand Header -->
+        <div class="d-flex align-items-center mobile-header-guest">
             <div class="bg-primary text-white rounded-3 d-flex align-items-center justify-content-center" style="width: 36px; height: 36px; background-color: var(--p-600) !important;">
                 <i class="bi bi-mortarboard-fill"></i>
             </div>
             <span class="fw-bold fs-5 ms-2 tracking-tight">Elevate</span>
+        </div>
+        <!-- Authenticated Brand Header (Avatar, User Name, and Email) -->
+        <div class="d-flex align-items-center mobile-header-auth d-none overflow-hidden" style="max-width: calc(100% - 32px);">
+            <img src="/images/default-avatar.svg" alt="Avatar" class="rounded-circle border flex-shrink-0" style="width: 38px; height: 38px; object-fit: cover; border-color: rgba(0,0,0,0.08) !important;">
+            <div class="overflow-hidden ps-2" style="max-width: calc(100% - 46px);">
+                <h6 class="fw-bold text-dark mb-0 text-truncate font-sans" id="mobile-nav-header-full-name" style="font-size: 0.875rem; line-height: 1.25;">Guest Student</h6>
+                <p class="text-muted text-truncate mb-0 x-small text-lowercase font-sans" id="mobile-nav-header-email" style="font-size: 0.725rem; line-height: 1.2;">guest@example.com</p>
+            </div>
         </div>
         <button class="btn-close shadow-none" style="width: 0.8rem; height: 0.8rem;" id="mobileNavClose"></button>
     </div>
@@ -157,6 +166,15 @@
             </a>
 
             <!-- Logged-in-only Mobile Navigation Links -->
+            <a class="mobile-nav-link auth-nav-item" href="/pages/profile.html">
+                <i class="bi bi-person-circle"></i>
+                <span>Profile</span>
+            </a>
+            <a class="mobile-nav-link auth-nav-item" href="/pages/change-password.html">
+                <i class="bi bi-shield-lock"></i>
+                <span>Change Password</span>
+            </a>
+
             <a class="mobile-nav-link auth-nav-item" href="/pages/courses.html">
                 <i class="bi bi-book"></i>
                 <span>Courses</span>
@@ -169,23 +187,13 @@
                 <i class="bi bi-patch-check-fill text-muted"></i>
                 <span>My Certificates</span>
             </a>
+            <a class="mobile-nav-link auth-nav-item" href="/pages/purchase-history.html">
+                <i class="bi bi-credit-card text-muted"></i>
+                <span>Purchase History</span>
+            </a>
             
-            <!-- Mobile User Profile Details (Shown when logged in) -->
-            <div class="p-3 bg-light rounded-4 border border-light mt-4 d-none" id="mobileUserProfileSection">
-                <div class="d-flex align-items-center gap-3 mb-3">
-                    <img src="/images/default-avatar.svg" alt="Avatar" class="rounded-circle border flex-shrink-0" style="width: 44px; height: 44px; object-fit: cover;">
-                    <div class="overflow-hidden ps-1" style="max-width: 170px;">
-                        <span class="text-muted text-uppercase fw-bold tracking-wider d-block" style="font-size: 0.6rem;">Logged In</span>
-                        <h6 class="fw-bold text-dark mb-0 text-truncate" id="mobile-nav-full-name">Guest Student</h6>
-                        <p class="text-muted text-truncate mb-0 x-small text-lowercase" id="mobile-nav-email">guest@example.com</p>
-                    </div>
-                </div>
-                <div class="d-flex flex-column gap-1 pt-2 border-top">
-                    <a class="mobile-nav-link py-1.5 px-2 font-sans text-muted" href="/pages/profile.html" style="font-size: 0.85rem;"><i class="bi bi-person-circle opacity-75"></i> Profile</a>
-                    <a class="mobile-nav-link py-1.5 px-2 font-sans text-muted" href="/pages/change-password.html" style="font-size: 0.85rem;"><i class="bi bi-shield-lock opacity-75"></i> Change Password</a>
-                    <a class="mobile-nav-link py-1.5 px-2 font-sans text-danger" href="#" id="mobile-navbar-logout-btn" style="font-size: 0.85rem;"><i class="bi bi-box-arrow-right"></i> Logout</a>
-                </div>
-            </div>
+            <!-- Hidden backward compatible element to avoid unused reference warnings -->
+            <div id="mobileUserProfileSection" class="d-none"></div>
 
             <!-- Compact Premium Mobile Language Selector -->
             <div class="mt-4 px-3 py-2 bg-light rounded-4 border border-light" style="background: var(--s-50) !important;">
@@ -202,14 +210,26 @@
         </nav>
     </div>
     
-    <div class="mt-auto" id="mobileAuthButtons">
-        <div class="mobile-divider"></div>
-        <div class="d-flex flex-column gap-2">
-            <a class="btn btn-light border w-100 py-2 fw-medium" href="/pages/login.html" style="font-size: var(--fs-sm);">Sign In</a>
-            <a class="btn btn-primary w-100 py-2 fw-semibold" href="/pages/register.html" style="font-size: var(--fs-sm);">Join For Free</a>
+    <!-- Pinned Bottom Area -->
+    <div class="mt-auto">
+        <!-- Guest Auth Action Buttons (Shown when logged out) -->
+        <div id="mobileAuthButtons" class="guest-nav-item">
+            <div class="mobile-divider"></div>
+            <div class="d-flex flex-column gap-2">
+                <a class="btn btn-light border w-100 py-2 fw-medium" href="/pages/login.html" style="font-size: var(--fs-sm);">Sign In</a>
+                <a class="btn btn-primary w-100 py-2 fw-semibold" href="/pages/register.html" style="font-size: var(--fs-sm);">Join For Free</a>
+            </div>
+            <div class="text-center mt-3">
+                <p class="text-muted x-small mb-0">Join 15,000+ professionals</p>
+            </div>
         </div>
-        <div class="text-center mt-3">
-            <p class="text-muted x-small mb-0">Join 15,000+ professionals</p>
+
+        <!-- Standalone Logout Button (Shown when logged in) -->
+        <div class="auth-nav-item d-none">
+            <div class="mobile-divider"></div>
+            <a href="#" id="mobile-navbar-logout-btn" class="btn w-100 py-2 px-3 rounded-3 d-flex align-items-center justify-content-center gap-2 fw-semibold transition-all mb-2" style="background-color: #fee2e2 !important; border: 1.5px solid #ef4444 !important; color: #b91c1c !important; font-size: 0.875rem; box-shadow: 0 4px 12px rgba(239, 68, 68, 0.18) !important;">
+                <i class="bi bi-box-arrow-right" style="font-size: 1rem; color: #ef4444 !important;"></i> Logout
+            </a>
         </div>
     </div>
 </div>

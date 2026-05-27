@@ -129,10 +129,14 @@ $(function() {
             $('.guest-nav-item').addClass('d-none');
             $('.auth-nav-item').removeClass('d-none');
             
+            // Mobile navigation header toggles
+            $('.mobile-header-guest').addClass('d-none');
+            $('.mobile-header-auth').removeClass('d-none');
+            
             // Render user details dynamically
-            $('#nav-full-name, #mobile-nav-full-name').text(userProfile.fullName);
-            $('#nav-email, #mobile-nav-email').text(userProfile.email);
-            $('#userProfileDropdown img, #mobileUserProfileSection img, .nav-item.dropdown img').attr('src', userProfile.avatar);
+            $('#nav-full-name, #mobile-nav-full-name, #mobile-nav-header-full-name').text(userProfile.fullName);
+            $('#nav-email, #mobile-nav-email, #mobile-nav-header-email').text(userProfile.email);
+            $('#userProfileDropdown img, #mobileUserProfileSection img, .nav-item.dropdown img, .mobile-header-auth img').attr('src', userProfile.avatar);
         } else {
             $('#navbar-login-item, #navbar-register-item').removeClass('d-none');
             $('#mobileAuthButtons').removeClass('d-none');
@@ -141,6 +145,10 @@ $(function() {
             // Toggle navigation menu visibility based on login status
             $('.guest-nav-item').removeClass('d-none');
             $('.auth-nav-item').addClass('d-none');
+            
+            // Mobile navigation header toggles
+            $('.mobile-header-guest').removeClass('d-none');
+            $('.mobile-header-auth').addClass('d-none');
         }
 
 
