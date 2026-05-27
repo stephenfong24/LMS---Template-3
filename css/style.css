@@ -420,6 +420,11 @@ textarea::placeholder,
 .bg-success { background-color: #10b981 !important; }
 .text-success { color: #10b981 !important; }
 
+/* Global Emerald Utilities */
+.text-emerald { color: #10b981 !important; }
+.bg-emerald-subtle { background-color: rgba(16, 185, 129, 0.1) !important; }
+.border-emerald-subtle { border-color: rgba(16, 185, 129, 0.2) !important; }
+
 .bg-dark { background-color: var(--s-900) !important; }
 
 /* Refined Premium Badge */
