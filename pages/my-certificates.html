@@ -50,6 +50,32 @@
             color: #fff;
             font-size: 1.25rem;
         }
+        .cert-badge-silver {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #e2e8f0 0%, #94a3b8 100%);
+            border-radius: 50%;
+            position: relative;
+            box-shadow: 0 4px 10px rgba(148,163,184,0.3);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.25rem;
+        }
+        .cert-badge-bronze {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #f59e0b 0%, #b45309 100%);
+            border-radius: 50%;
+            position: relative;
+            box-shadow: 0 4px 10px rgba(180,83,9,0.3);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.25rem;
+        }
         .font-serif {
             font-family: 'Playfair Display', 'Times New Roman', serif !important;
         }
@@ -98,11 +124,12 @@
 
             <!-- Cert Showcase Grid -->
             <div class="row g-4">
-                <div class="col-12">
-                    <div class="card certificate-card shadow-sm p-4 bg-white mb-4">
-                        <div class="row g-4 align-items-center">
+                <!-- Certificate 1: AI -->
+                <div class="col-12 col-xl-6">
+                    <div class="card certificate-card shadow-sm p-4 bg-white h-100">
+                        <div class="row g-4 align-items-center h-100">
                             <!-- Left: Certificate Beautiful Miniature Mockup -->
-                            <div class="col-lg-5 col-md-6">
+                            <div class="col-md-5">
                                 <div class="cert-mockup-frame rounded-2 shadow-sm d-flex flex-column align-items-center text-center p-4">
                                     <div class="text-uppercase tracking-widest text-muted mb-2 font-serif" style="font-size: 0.5rem; letter-spacing: 0.2em;">Certificate of Completion</div>
                                     <h6 class="font-serif fw-bold text-dark mb-3" style="font-size: 0.95rem;">Elevate Global Academy</h6>
@@ -126,38 +153,182 @@
                             </div>
 
                             <!-- Right: Credential breakdown details -->
-                            <div class="col-lg-7 col-md-6">
-                                <div class="ps-md-3">
-                                    <span class="badge py-1 px-2.5 rounded-2 font-mono fw-bold mb-3" style="font-size: 0.65rem; border: 1px solid rgba(16,185,129,0.1) !important; background-color: rgba(16, 185, 129, 0.1) !important; color: #10b981 !important;">
-                                        STATUS: ISSUED & ACTIVE
-                                    </span>
-                                    <h4 class="fw-bold text-dark tracking-tight mb-2">Generative AI & LLM Finetuning Sandbox</h4>
-                                    <div class="row g-3 my-2 py-3 border-top border-bottom" style="border-color: rgba(0,0,0,0.06) !important;">
-                                        <div class="col-sm-6">
-                                            <span class="text-muted x-small d-block text-uppercase fw-bold tracking-wider" style="font-size: 0.6rem;">ISSUED AUTHORIZATION</span>
-                                            <span class="fw-bold text-dark small">Elevate Academy Board</span>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <span class="text-muted x-small d-block text-uppercase fw-bold tracking-wider" style="font-size: 0.6rem;">ISSUE DATE / EXPIRY</span>
-                                            <span class="fw-bold text-dark small">May 15, 2026 • Permanent</span>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <span class="text-muted x-small d-block text-uppercase fw-bold tracking-wider" style="font-size: 0.6rem;">VERIFICATION ID</span>
-                                            <span class="fw-semibold text-dark font-mono small text-uppercase">CERT-AI-827493</span>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <span class="text-muted x-small d-block text-uppercase fw-bold tracking-wider" style="font-size: 0.6rem;">SYLLABUS FOCUS</span>
-                                            <span class="fw-bold text-dark small">Neural network parameters & APIs</span>
+                            <div class="col-md-7">
+                                <div class="ps-md-2 d-flex flex-column justify-content-between h-100">
+                                    <div>
+                                        <span class="badge py-1 px-2.5 rounded-2 font-mono fw-bold mb-3" style="font-size: 0.65rem; border: 1px solid rgba(16,185,129,0.1) !important; background-color: rgba(16, 185, 129, 0.1) !important; color: #10b981 !important;">
+                                            STATUS: ISSUED & ACTIVE
+                                        </span>
+                                        <h5 class="fw-bold text-dark tracking-tight mb-2">Generative AI & LLM Finetuning Sandbox</h5>
+                                        <div class="row g-2 my-2 py-3 border-top border-bottom" style="border-color: rgba(0,0,0,0.06) !important;">
+                                            <div class="col-12 col-sm-6">
+                                                <span class="text-muted x-small d-block text-uppercase fw-bold tracking-wider" style="font-size: 0.55rem;">ISSUED AUTHORIZATION</span>
+                                                <span class="fw-bold text-dark small" style="font-size: 0.8rem;">Elevate Academy Board</span>
+                                            </div>
+                                            <div class="col-12 col-sm-6">
+                                                <span class="text-muted x-small d-block text-uppercase fw-bold tracking-wider" style="font-size: 0.55rem;">ISSUE DATE / EXPIRY</span>
+                                                <span class="fw-bold text-dark small" style="font-size: 0.8rem;">May 15, 2026 • Permanent</span>
+                                            </div>
+                                            <div class="col-12 col-sm-6">
+                                                <span class="text-muted x-small d-block text-uppercase fw-bold tracking-wider" style="font-size: 0.55rem;">VERIFICATION ID</span>
+                                                <span class="fw-semibold text-dark font-mono small text-uppercase" style="font-size: 0.8rem;">CERT-AI-827493</span>
+                                            </div>
+                                            <div class="col-12 col-sm-6">
+                                                <span class="text-muted x-small d-block text-uppercase fw-bold tracking-wider" style="font-size: 0.55rem;">SYLLABUS FOCUS</span>
+                                                <span class="fw-bold text-dark small" style="font-size: 0.8rem;">Neural network parameters & APIs</span>
+                                            </div>
                                         </div>
                                     </div>
 
                                     <!-- Main Actions button -->
-                                    <div class="d-flex flex-wrap gap-3 mt-4">
-                                        <button class="btn btn-success px-4 py-2.5 fw-bold rounded-3 d-flex align-items-center gap-2 text-white border-0" style="background-color: #10b981 !important; box-shadow: 0 4px 14px rgba(16,185,129,0.2);" id="download-trigger-btn">
-                                            <i class="fa-solid fa-cloud-arrow-down"></i> Download PDF Certificate
+                                    <div class="d-flex flex-wrap gap-2 mt-3">
+                                        <button class="btn btn-success px-3 py-2.5 fw-bold rounded-3 d-flex align-items-center gap-2 text-white border-0 download-trigger-btn flex-grow-1 flex-md-grow-0 justify-content-center" style="background-color: #10b981 !important; box-shadow: 0 4px 14px rgba(16,185,129,0.15); font-size: 0.825rem;" data-cert-id="CERT-AI-827493" data-cert-title="Generative AI & LLM Finetuning Workshop">
+                                            <i class="fa-solid fa-cloud-arrow-down"></i> Download PDF
                                         </button>
-                                        <button class="btn btn-light border px-4 py-2.5 fw-medium text-dark rounded-3 d-flex align-items-center gap-2" id="share-trigger-btn">
-                                            <i class="fa-solid fa-arrow-up-from-bracket"></i> Share Credential
+                                        <button class="btn btn-light border px-3 py-2.5 fw-medium text-dark rounded-3 d-flex align-items-center gap-2 share-trigger-btn flex-grow-1 flex-md-grow-0 justify-content-center" style="font-size: 0.825rem;" data-cert-id="CERT-AI-827493">
+                                            <i class="fa-solid fa-arrow-up-from-bracket"></i> Share
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certificate 2: UX Progress -->
+                <div class="col-12 col-xl-6">
+                    <div class="card certificate-card shadow-sm p-4 bg-white h-100">
+                        <div class="row g-4 align-items-center h-100">
+                            <!-- Left: Certificate Beautiful Miniature Mockup -->
+                            <div class="col-md-5">
+                                <div class="cert-mockup-frame rounded-2 shadow-sm d-flex flex-column align-items-center text-center p-4" style="border-color: #94a3b8 !important;">
+                                    <div class="text-uppercase tracking-widest text-muted mb-2 font-serif" style="font-size: 0.5rem; letter-spacing: 0.2em;">Certificate of Completion</div>
+                                    <h6 class="font-serif fw-bold text-dark mb-3" style="font-size: 0.95rem;">Elevate Global Academy</h6>
+                                    
+                                    <div class="x-small text-muted mb-0.5" style="font-size: 0.55rem;">This credentials hereby verifies that</div>
+                                    <div class="font-serif fw-semibold italic text-dark border-bottom pb-1 mb-2 px-3 text-truncate w-100" style="font-size: 0.85rem; border-color: rgba(148,163,184,0.3) !important;">Guest Student</div>
+                                    
+                                    <div class="x-small text-muted mb-1" style="font-size: 0.55rem;">has fulfilled all mandatory exams to specialize in</div>
+                                    <h6 class="fw-bold text-dark font-serif mb-3 px-2 text-wrap" style="font-size: 0.75rem; color: #475569 !important;">UX Strategy Immersive</h6>
+                                    
+                                    <div class="d-flex justify-content-between align-items-center w-100 mt-2 px-2 pt-2 border-top" style="border-top:1px dashed rgba(148,163,184,0.4) !important;">
+                                        <div class="text-start" style="font-size: 9px; line-height: 1.1;">
+                                            <span class="text-muted d-block">ID: CERT-UX-719304</span>
+                                            <span class="text-muted d-block">Date: May 05, 2026</span>
+                                        </div>
+                                        <div class="cert-badge-silver">
+                                            <i class="fa-solid fa-graduation-cap" style="font-size: 0.95rem;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right: Credential breakdown details -->
+                            <div class="col-md-7">
+                                <div class="ps-md-2 d-flex flex-column justify-content-between h-100">
+                                    <div>
+                                        <span class="badge py-1 px-2.5 rounded-2 font-mono fw-bold mb-3" style="font-size: 0.65rem; border: 1px solid rgba(16,185,129,0.1) !important; background-color: rgba(16, 185, 129, 0.1) !important; color: #10b981 !important;">
+                                            STATUS: ISSUED & ACTIVE
+                                        </span>
+                                        <h5 class="fw-bold text-dark tracking-tight mb-2">UX Strategy Immersive Masterclass</h5>
+                                        <div class="row g-2 my-2 py-3 border-top border-bottom" style="border-color: rgba(0,0,0,0.06) !important;">
+                                            <div class="col-12 col-sm-6">
+                                                <span class="text-muted x-small d-block text-uppercase fw-bold tracking-wider" style="font-size: 0.55rem;">ISSUED AUTHORIZATION</span>
+                                                <span class="fw-bold text-dark small" style="font-size: 0.8rem;">Elevate Academy Board</span>
+                                            </div>
+                                            <div class="col-12 col-sm-6">
+                                                <span class="text-muted x-small d-block text-uppercase fw-bold tracking-wider" style="font-size: 0.55rem;">ISSUE DATE / EXPIRY</span>
+                                                <span class="fw-bold text-dark small" style="font-size: 0.8rem;">May 05, 2026 • Permanent</span>
+                                            </div>
+                                            <div class="col-12 col-sm-6">
+                                                <span class="text-muted x-small d-block text-uppercase fw-bold tracking-wider" style="font-size: 0.55rem;">VERIFICATION ID</span>
+                                                <span class="fw-semibold text-dark font-mono small text-uppercase" style="font-size: 0.8rem;">CERT-UX-719304</span>
+                                            </div>
+                                            <div class="col-12 col-sm-6">
+                                                <span class="text-muted x-small d-block text-uppercase fw-bold tracking-wider" style="font-size: 0.55rem;">SYLLABUS FOCUS</span>
+                                                <span class="fw-bold text-dark small" style="font-size: 0.8rem;">User ethnography & prototyping</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Main Actions button -->
+                                    <div class="d-flex flex-wrap gap-2 mt-3">
+                                        <button class="btn btn-success px-3 py-2.5 fw-bold rounded-3 d-flex align-items-center gap-2 text-white border-0 download-trigger-btn flex-grow-1 flex-md-grow-0 justify-content-center" style="background-color: #10b981 !important; box-shadow: 0 4px 14px rgba(16,185,129,0.15); font-size: 0.825rem;" data-cert-id="CERT-UX-719304" data-cert-title="UX Strategy Immersive specialization">
+                                            <i class="fa-solid fa-cloud-arrow-down"></i> Download PDF
+                                        </button>
+                                        <button class="btn btn-light border px-3 py-2.5 fw-medium text-dark rounded-3 d-flex align-items-center gap-2 share-trigger-btn flex-grow-1 flex-md-grow-0 justify-content-center" style="font-size: 0.825rem;" data-cert-id="CERT-UX-719304">
+                                            <i class="fa-solid fa-arrow-up-from-bracket"></i> Share
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certificate 3: Cloud Architecture -->
+                <div class="col-12 col-xl-6">
+                    <div class="card certificate-card shadow-sm p-4 bg-white h-100">
+                        <div class="row g-4 align-items-center h-100">
+                            <!-- Left: Certificate Beautiful Miniature Mockup -->
+                            <div class="col-md-5">
+                                <div class="cert-mockup-frame rounded-2 shadow-sm d-flex flex-column align-items-center text-center p-4" style="border-color: #b45309 !important;">
+                                    <div class="text-uppercase tracking-widest text-muted mb-2 font-serif" style="font-size: 0.5rem; letter-spacing: 0.2em;">Certificate of Completion</div>
+                                    <h6 class="font-serif fw-bold text-dark mb-3" style="font-size: 0.95rem;">Elevate Global Academy</h6>
+                                    
+                                    <div class="x-small text-muted mb-0.5" style="font-size: 0.55rem;">This credentials hereby verifies that</div>
+                                    <div class="font-serif fw-semibold italic text-dark border-bottom pb-1 mb-2 px-3 text-truncate w-100" style="font-size: 0.85rem; border-color: rgba(180,83,9,0.3) !important;">Guest Student</div>
+                                    
+                                    <div class="x-small text-muted mb-1" style="font-size: 0.55rem;">has fulfilled all mandatory exams to specialize in</div>
+                                    <h6 class="fw-bold text-dark font-serif mb-3 px-2 text-wrap" style="font-size: 0.75rem; color: #92400e !important;">Cloud Architecture</h6>
+                                    
+                                    <div class="d-flex justify-content-between align-items-center w-100 mt-2 px-2 pt-2 border-top" style="border-top:1px dashed rgba(180,83,9,0.4) !important;">
+                                        <div class="text-start" style="font-size: 9px; line-height: 1.1;">
+                                            <span class="text-muted d-block">ID: CERT-CL-492716</span>
+                                            <span class="text-muted d-block">Date: Apr 18, 2026</span>
+                                        </div>
+                                        <div class="cert-badge-bronze">
+                                            <i class="fa-solid fa-server" style="font-size: 0.95rem;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right: Credential breakdown details -->
+                            <div class="col-md-7">
+                                <div class="ps-md-2 d-flex flex-column justify-content-between h-100">
+                                    <div>
+                                        <span class="badge py-1 px-2.5 rounded-2 font-mono fw-bold mb-3" style="font-size: 0.65rem; border: 1px solid rgba(16,185,129,0.1) !important; background-color: rgba(16, 185, 129, 0.1) !important; color: #10b981 !important;">
+                                            STATUS: ISSUED & ACTIVE
+                                        </span>
+                                        <h5 class="fw-bold text-dark tracking-tight mb-2">Cloud Architecture & DevOps Infrastructure</h5>
+                                        <div class="row g-2 my-2 py-3 border-top border-bottom" style="border-color: rgba(0,0,0,0.06) !important;">
+                                            <div class="col-12 col-sm-6">
+                                                <span class="text-muted x-small d-block text-uppercase fw-bold tracking-wider" style="font-size: 0.55rem;">ISSUED AUTHORIZATION</span>
+                                                <span class="fw-bold text-dark small" style="font-size: 0.8rem;">Elevate Academy Board</span>
+                                            </div>
+                                            <div class="col-12 col-sm-6">
+                                                <span class="text-muted x-small d-block text-uppercase fw-bold tracking-wider" style="font-size: 0.55rem;">ISSUE DATE / EXPIRY</span>
+                                                <span class="fw-bold text-dark small" style="font-size: 0.8rem;">Apr 18, 2026 • Permanent</span>
+                                            </div>
+                                            <div class="col-12 col-sm-6">
+                                                <span class="text-muted x-small d-block text-uppercase fw-bold tracking-wider" style="font-size: 0.55rem;">VERIFICATION ID</span>
+                                                <span class="fw-semibold text-dark font-mono small text-uppercase" style="font-size: 0.8rem;">CERT-CL-492716</span>
+                                            </div>
+                                            <div class="col-12 col-sm-6">
+                                                <span class="text-muted x-small d-block text-uppercase fw-bold tracking-wider" style="font-size: 0.55rem;">SYLLABUS FOCUS</span>
+                                                <span class="fw-bold text-dark small" style="font-size: 0.8rem;">Cloud operations & serverless IaC</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Main Actions button -->
+                                    <div class="d-flex flex-wrap gap-2 mt-3">
+                                        <button class="btn btn-success px-3 py-2.5 fw-bold rounded-3 d-flex align-items-center gap-2 text-white border-0 download-trigger-btn flex-grow-1 flex-md-grow-0 justify-content-center" style="background-color: #10b981 !important; box-shadow: 0 4px 14px rgba(16,185,129,0.15); font-size: 0.825rem;" data-cert-id="CERT-CL-492716" data-cert-title="Cloud Architecture & DevOps Infrastructure specialization">
+                                            <i class="fa-solid fa-cloud-arrow-down"></i> Download PDF
+                                        </button>
+                                        <button class="btn btn-light border px-3 py-2.5 fw-medium text-dark rounded-3 d-flex align-items-center gap-2 share-trigger-btn flex-grow-1 flex-md-grow-0 justify-content-center" style="font-size: 0.825rem;" data-cert-id="CERT-CL-492716">
+                                            <i class="fa-solid fa-arrow-up-from-bracket"></i> Share
                                         </button>
                                     </div>
                                 </div>
@@ -191,7 +362,9 @@
             }
 
             // Standard mock interactive flow notifications
-            $('#download-trigger-btn').click(function() {
+            $('.download-trigger-btn').click(function() {
+                const certId = $(this).data('cert-id') || 'CERT-AI-827493';
+                const certTitle = $(this).data('cert-title') || 'Generative AI & LLM Finetuning';
                 const btnOriginalText = $(this).html();
                 $(this).prop('disabled', true).html('<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Compiling High-Res PDF...');
                 
@@ -201,8 +374,8 @@
                     
                     // Trigger actual virtual download payload
                     const dummyLink = document.createElement("a");
-                    dummyLink.href = "data:text/plain;charset=utf-8," + encodeURIComponent("Official verified credentials PDF for student specialization CERT-AI-827493");
-                    dummyLink.download = "ELEVATE-ACADEMY-CERTIFICATE-AI-827493.txt";
+                    dummyLink.href = "data:text/plain;charset=utf-8," + encodeURIComponent("Official verified credentials PDF for student specialization " + certTitle + " (" + certId + ")");
+                    dummyLink.download = "ELEVATE-ACADEMY-CERTIFICATE-" + certId + ".txt";
                     document.body.appendChild(dummyLink);
                     dummyLink.click();
                     document.body.removeChild(dummyLink);
@@ -213,8 +386,9 @@
                 }, 1500);
             });
 
-            $('#share-trigger-btn').click(function() {
-                alert('Verification credentials link copied: https://elevate.academy/verify/CERT-AI-827493\n\nReady to post to LinkedIn Profile!');
+            $('.share-trigger-btn').click(function() {
+                const certId = $(this).data('cert-id') || 'CERT-AI-827493';
+                alert('Verification credentials link copied: https://elevate.academy/verify/' + certId + '\n\nReady to post to LinkedIn Profile!');
             });
         });
     </script>
