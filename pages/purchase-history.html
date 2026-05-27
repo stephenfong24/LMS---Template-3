@@ -137,6 +137,20 @@
             color: #b91c1c !important;
             border: 1px solid #fecaca !important;
         }
+
+        .course-image-thumb {
+            width: 100%;
+            height: 180px;
+            flex-shrink: 0;
+            background-color: #f1f5f9;
+        }
+
+        @media (min-width: 576px) {
+            .course-image-thumb {
+                width: 140px;
+                height: 90px;
+            }
+        }
     </style>
 </head>
 <body class="bg-light-alt" style="background-color: var(--s-50); min-height: 100vh; display: flex; flex-direction: column;">
@@ -440,9 +454,9 @@
                             <div class="row align-items-center g-4 g-lg-5">
                                 <!-- Col 1: Course Info & Thumbnail (merged side-by-side) -->
                                 <div class="col-lg-5 col-md-12 col-12">
-                                    <div class="d-flex align-items-center gap-4">
+                                    <div class="d-flex flex-column flex-sm-row align-items-stretch align-items-sm-center gap-3 gap-sm-4">
                                         <!-- Course Image Thumbnail -->
-                                        <div class="position-relative overflow-hidden rounded-3 border d-none d-sm-block shadow-sm" style="width: 140px; height: 90px; flex-shrink: 0; background-color: #f1f5f9;">
+                                        <div class="course-image-thumb position-relative overflow-hidden rounded-3 border shadow-sm">
                                             <img src="${item.courseImage}" class="w-100 h-100" style="object-fit: cover;" alt="${item.courseTitle}">
                                         </div>
                                         <!-- Course Text Details -->
