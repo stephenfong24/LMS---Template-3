@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Learnings | Elevate Academy</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <style>
+        .learning-banner {
+            background: linear-gradient(135deg, var(--s-900) 0%, #1e1b4b 100%);
+            border-radius: 20px;
+            color: white;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        .learning-banner::after {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: -10%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(124, 58, 237, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .progress-bar-custom {
+            height: 8px;
+            border-radius: 10px;
+            background-color: var(--s-100);
+            overflow: hidden;
+        }
+        .progress-bar-fill {
+            height: 100%;
+            border-radius: 10px;
+            transition: width 0.8s ease;
+        }
+    </style>
+</head>
+<body class="bg-light-alt" style="background-color: var(--s-50); min-height: 100vh; display: flex; flex-direction: column;">
+    
+    <!-- Header placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <main class="container py-5 flex-grow-1">
+        <!-- Locked State Placeholder (Shown if logged out) -->
+        <div id="locked-state" class="row justify-content-center d-none" style="margin-top: 5vh; margin-bottom: 5vh;">
+            <div class="col-lg-6 col-md-8 text-center">
+                <div class="card p-5 border-0 shadow-sm rounded-4 bg-white">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-light text-primary mb-4 shadow-sm" style="width: 80px; height: 80px; border: 1px solid rgba(124,58,237,0.1) !important;">
+                        <i class="fa-solid fa-lock fs-1 text-primary"></i>
+                    </div>
+                    <h3 class="fw-bold text-dark tracking-tight mb-2">Curriculum Locked</h3>
+                    <p class="text-muted small mx-auto mb-4" style="max-width: 380px;">
+                        You must be signed in to view your learning pathways, cohort progress trackers, and curriculum modules.
+                    </p>
+                    <div class="d-grid gap-2 col-8 mx-auto">
+                        <a href="login.html" class="btn btn-primary py-2.5 fw-bold d-flex align-items-center justify-content-center gap-2 rounded-3">
+                            <i class="fa-solid fa-arrow-right-to-bracket"></i> Sign In to Account
+                        </a>
+                        <a href="courses.html" class="btn btn-outline-secondary py-2.5 fw-medium rounded-3 text-muted">
+                            Explore Public Courses
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Enrolled Workspace (Shown if logged in) -->
+        <div id="enrolled-workspace" class="d-none">
+            <!-- Greeting Banner -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <div class="learning-banner shadow-sm d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-4">
+                        <div>
+                            <span class="badge bg-primary bg-opacity-20 text-white border border-white border-opacity-15 px-3 py-1.5 mb-3 rounded-2 fw-semibold" style="font-size: 0.7rem; background-color: rgba(255,255,255,0.08) !important;">
+                                <i class="fa-solid fa-graduation-cap me-1.5 text-emerald"></i> Active Student Dashboard
+                            </span>
+                            <h2 class="fw-extrabold tracking-tight mb-2 text-white">Welcome Back, Guest Student!</h2>
+                            <p class="mb-0 text-white-50 small">Keep going with your curriculum tracks. You are on a 5-day learning streak!</p>
+                        </div>
+                        <div class="d-flex gap-3">
+                            <div class="p-3 bg-white bg-opacity-5 rounded-4 border border-white border-opacity-10 text-center" style="min-width: 110px; background-color: rgba(255,255,255,0.03) !important;">
+                                <span class="d-block fw-extrabold text-white fs-4 mb-0 font-mono">3</span>
+                                <span class="x-small text-white-50 text-uppercase fw-bold tracking-wider" style="font-size: 9px;">COURSES</span>
+                            </div>
+                            <div class="p-3 bg-white bg-opacity-5 rounded-4 border border-white border-opacity-10 text-center" style="min-width: 110px; background-color: rgba(255,255,255,0.03) !important;">
+                                <span class="d-block fw-extrabold text-white fs-4 mb-0 font-mono" style="color: #10b981;">1</span>
+                                <span class="x-small text-white-50 text-uppercase fw-bold tracking-wider" style="font-size: 9px;">COMPLETED</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page Title bar and Filter -->
+            <div class="row mb-4 align-items-center justify-content-between g-3">
+                <div class="col-md-auto">
+                    <h4 class="fw-bold text-dark tracking-tight mb-1">Your Enrolled Cohorts</h4>
+                    <p class="text-muted mb-0 small">Access your lectures, resources, sandboxes, and certificates below.</p>
+                </div>
+                <div class="col-md-auto">
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-sm btn-light border px-3 py-2 fw-bold text-dark rounded-3 active" id="filter-all">All Cohorts</button>
+                        <button class="btn btn-sm btn-light border px-3 py-2 fw-medium text-muted rounded-3" id="filter-active">In Progress</button>
+                        <button class="btn btn-sm btn-light border px-3 py-2 fw-medium text-muted rounded-3" id="filter-complete">Completed</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cards Grid -->
+            <div class="row g-4 mb-5" id="courses-grid-learnings">
+                <!-- Course 1 -->
+                <div class="col-lg-4 col-md-6 learning-cohort-item" data-status="active">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 saas-card bg-white overflow-hidden">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800" class="card-img-top" style="height: 180px; object-fit: cover;">
+                            <span class="position-absolute top-0 end-0 m-3 badge bg-primary px-2.5 py-1.5 fw-bold text-uppercase rounded-2" style="font-size: 0.65rem;">
+                                Data Science
+                            </span>
+                        </div>
+                        <div class="card-body p-4 d-flex flex-column justify-content-between">
+                            <div>
+                                <h5 class="card-title fw-bold text-dark mb-1 small" style="font-size: 1.05rem;">Data Analytics Pro</h5>
+                                <p class="text-muted x-small mb-3"><i class="fa-solid fa-clock me-1 text-primary"></i> Last activity: Yesterday</p>
+                                
+                                <div class="mb-4">
+                                    <div class="d-flex justify-content-between mb-1.5 align-items-center">
+                                        <span class="x-small text-muted fw-semibold">Syllabus Completion</span>
+                                        <span class="x-small fw-bold text-primary font-mono">75%</span>
+                                    </div>
+                                    <div class="progress-bar-custom">
+                                        <div class="progress-bar-fill bg-primary" style="width: 75%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <a href="#" class="btn btn-outline-primary w-100 py-2.5 fw-bold rounded-3 d-flex align-items-center justify-content-center gap-1.5" style="font-size: 0.85rem;">
+                                <span>Continue Learning</span> <i class="fa-solid fa-play ms-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 2 -->
+                <div class="col-lg-4 col-md-6 learning-cohort-item" data-status="active">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 saas-card bg-white overflow-hidden">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&q=80&w=800" class="card-img-top" style="height: 180px; object-fit: cover;">
+                            <span class="position-absolute top-0 end-0 m-3 badge bg-primary px-2.5 py-1.5 fw-bold text-uppercase rounded-2" style="font-size: 0.65rem; background-color: #7c3aed !important;">
+                                Design
+                            </span>
+                        </div>
+                        <div class="card-body p-4 d-flex flex-column justify-content-between">
+                            <div>
+                                <h5 class="card-title fw-bold text-dark mb-1 small" style="font-size: 1.05rem;">UX Strategy & Design Masterclass</h5>
+                                <p class="text-muted x-small mb-3"><i class="fa-solid fa-clock me-1 text-primary"></i> Last activity: 3 days ago</p>
+                                
+                                <div class="mb-4">
+                                    <div class="d-flex justify-content-between mb-1.5 align-items-center">
+                                        <span class="x-small text-muted fw-semibold">Syllabus Completion</span>
+                                        <span class="x-small fw-bold text-primary font-mono">20%</span>
+                                    </div>
+                                    <div class="progress-bar-custom">
+                                        <div class="progress-bar-fill bg-primary" style="width: 20%; background-color: #7c3aed !important;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <a href="#" class="btn btn-outline-primary w-100 py-2.5 fw-bold rounded-3 d-flex align-items-center justify-content-center gap-1.5" style="border-color: #7c3aed !important; color: #7c3aed !important; font-size: 0.85rem;">
+                                <span>Continue Learning</span> <i class="fa-solid fa-play ms-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 3 -->
+                <div class="col-lg-4 col-md-6 learning-cohort-item" data-status="complete">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 saas-card bg-white overflow-hidden border border-success border-opacity-10" style="background-color: rgba(16, 185, 129, 0.02) !important;">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=800" class="card-img-top" style="height: 180px; object-fit: cover;">
+                            <span class="position-absolute top-0 end-0 m-3 badge bg-success px-2.5 py-1.5 fw-bold text-uppercase rounded-2" style="font-size: 0.65rem; background-color: #10b981 !important;">
+                                Artificial Intelligence
+                            </span>
+                        </div>
+                        <div class="card-body p-4 d-flex flex-column justify-content-between">
+                            <div>
+                                <h5 class="card-title fw-bold text-dark mb-1 small" style="font-size: 1.05rem;">Generative AI & LLM Finetuning Sandbox</h5>
+                                <p class="text-muted x-small mb-3"><i class="fa-solid fa-circle-check me-1 text-success"></i> Completed on: 2026-05-15</p>
+                                
+                                <div class="mb-4">
+                                    <div class="d-flex justify-content-between mb-1.5 align-items-center">
+                                        <span class="x-small text-muted fw-semibold">Syllabus Completion</span>
+                                        <span class="x-small fw-bold text-success font-mono">100%</span>
+                                    </div>
+                                    <div class="progress-bar-custom">
+                                        <div class="progress-bar-fill" style="width: 100%; background-color: #10b981 !important;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <a href="my-certificates.html" class="btn btn-success w-100 py-2.5 fw-bold rounded-3 d-flex align-items-center justify-content-center gap-1.5 text-white" style="background-color: #10b981 !important; border-color: #10b981 !important; font-size: 0.85rem;">
+                                <i class="fa-solid fa-award me-2"></i> <span>View Certificate</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/components.js"></script>
+    <script src="/js/main.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            // Check logged in state on dynamic module loading
+            const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+            if (isLoggedIn) {
+                $('#locked-state').addClass('d-none');
+                $('#enrolled-workspace').removeClass('d-none');
+            } else {
+                $('#locked-state').removeClass('d-none');
+                $('#enrolled-workspace').addClass('d-none');
+            }
+
+            // Filtering Action Loops
+            $('#filter-all').click(function() {
+                $('.learning-cohort-item').fadeIn(200);
+                toggleFilterBtn($(this));
+            });
+
+            $('#filter-active').click(function() {
+                $('.learning-cohort-item').hide();
+                $('.learning-cohort-item[data-status="active"]').fadeIn(200);
+                toggleFilterBtn($(this));
+            });
+
+            $('#filter-complete').click(function() {
+                $('.learning-cohort-item').hide();
+                $('.learning-cohort-item[data-status="complete"]').fadeIn(200);
+                toggleFilterBtn($(this));
+            });
+
+            function toggleFilterBtn($activeBtn) {
+                $activeBtn.parent().find('button').removeClass('active fw-bold text-dark').addClass('text-muted fw-medium');
+                $activeBtn.addClass('active fw-bold text-dark').removeClass('text-muted fw-medium');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -93,18 +93,18 @@
         <!-- Top alert: Sign in verification status -->
         <div class="row mb-4">
             <div class="col-12">
-                <div class="alert alert-success border border-emerald-subtle rounded-4 p-3 d-flex align-items-md-center gap-3 bg-white shadow-sm" style="border-left: 5px solid #10b981 !important;">
-                    <div class="d-flex align-items-center justify-content-center rounded-3 bg-emerald-subtle text-emerald flex-shrink-0" style="width: 44px; height: 44px; font-size: 1.25rem;">
-                        <i class="fa-solid fa-circle-user"></i>
+                <div id="checkout-alert-container" class="alert alert-success border border-emerald-subtle rounded-4 p-3 d-flex align-items-md-center gap-3 bg-white shadow-sm" style="border-left: 5px solid #10b981 !important;">
+                    <div id="checkout-alert-icon-wrap" class="d-flex align-items-center justify-content-center rounded-3 bg-emerald-subtle text-emerald flex-shrink-0" style="width: 44px; height: 44px; font-size: 1.25rem;">
+                        <i id="checkout-alert-icon" class="fa-solid fa-circle-user"></i>
                     </div>
                     <div class="flex-grow-1">
                         <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-start align-items-md-center gap-2">
                             <div>
-                                <span class="fw-bold text-dark d-block mb-0.5" style="font-size: var(--fs-base);">Active Student Session Verified</span>
-                                <span class="text-muted small">You must be registered and signed in to complete a purchase. You are currently logged in.</span>
+                                <span id="checkout-alert-title" class="fw-bold text-dark d-block mb-0.5" style="font-size: var(--fs-base);">Active Student Session Verified</span>
+                                <span id="checkout-alert-desc" class="text-muted small">You must be registered and signed in to complete a purchase. You are currently logged in.</span>
                             </div>
-                            <div>
-                                <span class="badge px-2.5 py-1.5 fw-semibold rounded-2 border" style="background-color: rgba(16, 185, 129, 0.1) !important; color: #047857 !important; border-color: rgba(16, 185, 129, 0.2) !important; font-size: 0.7rem;">
+                            <div id="checkout-alert-badge-wrap">
+                                <span id="checkout-alert-badge" class="badge px-2.5 py-1.5 fw-semibold rounded-2 border" style="background-color: rgba(16, 185, 129, 0.1) !important; color: #047857 !important; border-color: rgba(16, 185, 129, 0.2) !important; font-size: 0.7rem;">
                                     <i class="fa-solid fa-cloud-arrow-up me-1"></i> Authenticated
                                 </span>
                             </div>
@@ -414,10 +414,50 @@
             $('#course-duration').html('<i class="fa-solid fa-hourglass-half me-1 text-emerald"></i>' + meta.duration);
             $('#course-desc').text(meta.description);
 
-            // Populate Student credentials read-only mode values
-            const verifiedAccountName = "John Doe";
-            const verifiedAccountEmail = "john@example.com";
-            const verifiedAccountPhone = "+60 12-345 6789";
+            // Dynamically evaluate session info matching local memory
+            const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+            let verifiedAccountName = "";
+            let verifiedAccountEmail = "";
+            let verifiedAccountPhone = "";
+
+            if (isLoggedIn) {
+                // Verified Guest Details
+                verifiedAccountName = "Guest Student";
+                verifiedAccountEmail = "verylongemailaddress@exampledomain.com";
+                verifiedAccountPhone = "+60 12-345 6789";
+
+                // Standard green verified state attributes
+                $('#checkout-alert-container').removeClass('alert-danger border-danger-subtle').addClass('alert-success border-emerald-subtle').css('border-left', '5px solid #10b981');
+                $('#checkout-alert-icon-wrap').removeClass('bg-danger-subtle text-danger').addClass('bg-emerald-subtle text-emerald');
+                $('#checkout-alert-icon').removeClass('fa-circle-xmark').addClass('fa-circle-user');
+                $('#checkout-alert-title').text('Active Student Session Verified');
+                $('#checkout-alert-desc').text('You must be registered and signed in to complete a purchase. You are currently logged in.');
+                $('#checkout-alert-badge').css({
+                    'background-color': 'rgba(16, 185, 129, 0.1)',
+                    'border-color': 'rgba(16, 185, 129, 0.2)',
+                    'color': '#047857'
+                }).html('<i class="fa-solid fa-cloud-arrow-up me-1"></i> Authenticated');
+            } else {
+                // Locked Anonymous state
+                verifiedAccountName = "Guest Profile (Not Authenticated)";
+                verifiedAccountEmail = "---";
+                verifiedAccountPhone = "---";
+
+                // Style the banner in alerting warning red/orange colors
+                $('#checkout-alert-container').removeClass('alert-success border-emerald-subtle').addClass('alert-danger border-danger-subtle').css('border-left', '5px solid #ef4444');
+                $('#checkout-alert-icon-wrap').removeClass('bg-emerald-subtle text-emerald').addClass('bg-danger-subtle text-danger');
+                $('#checkout-alert-icon').removeClass('fa-circle-user').addClass('fa-circle-xmark');
+                $('#checkout-alert-title').text('Sign In Required to Purchase');
+                $('#checkout-alert-desc').html('You must be registered and signed in to complete a purchase. Please <strong><a href="login.html" class="text-danger">Click here to Sign In</a></strong> first.');
+                $('#checkout-alert-badge').css({
+                    'background-color': 'rgba(239, 68, 68, 0.15)',
+                    'border-color': 'rgba(239, 68, 68, 0.25)',
+                    'color': '#b91c1c'
+                }).html('<i class="fa-solid fa-triangle-exclamation me-1"></i> Session Locked');
+
+                // Toggle confirmation button text
+                $('#confirm-enrollment-btn').html('<i class="fa-solid fa-arrow-right-to-bracket"></i> Sign In to Enroll');
+            }
 
             $('#user-full-name').text(verifiedAccountName);
             $('#user-email').text(verifiedAccountEmail);
@@ -486,9 +526,15 @@
             });
 
             // Handle Enrollment Confirm Click
-            $('#confirm-enrollment-btn').click(function() {
+            $('#confirm-enrollment-btn').click(function(e) {
+                if (!isLoggedIn) {
+                    e.preventDefault();
+                    window.location.href = 'login.html';
+                    return;
+                }
+
                 // Ensure profile information check as requested
-                if (!verifiedAccountName || !verifiedAccountEmail || !verifiedAccountPhone) {
+                if (!verifiedAccountName || !verifiedAccountEmail) {
                     alert('LMS authentication profile details are corrupted. Verify that your login is complete.');
                     return;
                 }

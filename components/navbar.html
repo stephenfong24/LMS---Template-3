@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg sticky-top navbar-dark-mode">
     <div class="container">
         <a class="navbar-brand d-flex align-items-center" href="/index.html">
-            <div class="sidebar-brand-icon text-white rounded-3 d-flex align-items-center justify-content-center" style="width: 36px; height: 36px;">
+            <div class="sidebar-brand-icon text-white rounded-3 d-flex align-items-center justify-content-center" style="width: 36px; height: 36px; background-color: var(--p-600) !important;">
                 <i class="bi bi-mortarboard-fill"></i>
             </div>
             <span class="fw-bold fs-4 ms-2 tracking-tight">Elevate</span>
@@ -9,17 +9,29 @@
         
         <div class="collapse navbar-collapse d-none d-lg-block">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
-                <li class="nav-item">
+                <!-- Guest-only Desktop Navigation Links -->
+                <li class="nav-item guest-nav-item">
                     <a class="nav-link fw-semibold" href="/index.html">Home</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item guest-nav-item">
                     <a class="nav-link fw-semibold" href="/pages/courses.html">Courses</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link fw-semibold" href="/pages/about.html">About</a>
+                <li class="nav-item guest-nav-item">
+                    <a class="nav-link fw-semibold" href="/pages/about.html">About Us</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link fw-semibold" href="/pages/contact.html">Contact</a>
+                <li class="nav-item guest-nav-item">
+                    <a class="nav-link fw-semibold" href="/pages/contact.html">Contact Us</a>
+                </li>
+
+                <!-- Logged-in-only Desktop Navigation Links -->
+                <li class="nav-item auth-nav-item">
+                    <a class="nav-link fw-semibold" href="/pages/courses.html">Courses</a>
+                </li>
+                <li class="nav-item auth-nav-item">
+                    <a class="nav-link fw-semibold" href="/pages/my-learnings.html">My Learnings</a>
+                </li>
+                <li class="nav-item auth-nav-item">
+                    <a class="nav-link fw-semibold" href="/pages/my-certificates.html">My Certificates</a>
                 </li>
                 
                 <!-- Desktop Change Language Dropdown -->
@@ -44,11 +56,51 @@
                     </ul>
                 </li>
                 
-                <li class="nav-item ms-3">
-                    <a class="btn btn-sm btn-light border-0 px-4" style="background: rgba(255,255,255,0.1); color: #fff;" href="/pages/login.html">Login</a>
+                <!-- Guest Auth Buttons (Desktop) -->
+                <li class="nav-item ms-3" id="navbar-login-item">
+                    <a class="btn btn-sm btn-light border-0 px-4 py-2" style="background: rgba(255,255,255,0.1); color: #fff; border-radius: var(--radius-md); font-weight: 600;" href="/pages/login.html">Sign In</a>
                 </li>
-                <li class="nav-item ms-2">
-                    <a class="btn btn-sm btn-primary px-4" href="/pages/register.html">Get Started</a>
+                <li class="nav-item ms-2" id="navbar-register-item">
+                    <a class="btn btn-sm btn-primary px-4 py-2" style="border-radius: var(--radius-md); font-weight: 600;" href="/pages/register.html">Join For Free</a>
+                </li>
+
+                <!-- Logged In User Avatar (Desktop) -->
+                <li class="nav-item dropdown ms-3 d-none" id="userProfileDropdown">
+                    <a class="nav-link dropdown-toggle d-flex align-items-center gap-2 p-1" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <div class="user-avatar-container position-relative">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200" alt="Avatar" class="rounded-circle border border-white border-opacity-30 shadow-sm" style="width: 38px; height: 38px; object-fit: cover;">
+                            <span class="position-absolute bottom-0 end-0 bg-success border border-white rounded-circle" style="width: 10px; height: 10px; border-width: 2px !important;"></span>
+                        </div>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg mt-2 p-3 animated-dropdown" aria-labelledby="profileDropdown" style="background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.08) !important; border-radius: 16px; min-width: 260px;">
+                        <li class="px-2 pb-3 mb-2 border-bottom border-white border-opacity-10">
+                            <div class="d-flex align-items-center gap-3">
+                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200" alt="Avatar" class="rounded-circle flex-shrink-0" style="width: 44px; height: 44px; object-fit: cover;">
+                                <div class="overflow-hidden ps-1" style="max-width: 170px;">
+                                    <div class="fw-bold text-white text-truncate" style="font-size: 0.95rem; line-height: 1.3;" id="nav-full-name">Guest Student</div>
+                                    <div class="text-white-50 text-truncate text-lowercase" style="font-size: 0.75rem; margin-top: 3px;" id="nav-email" title="guest@example.com">guest@example.com</div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center gap-2 text-white-50 py-2.5 px-3 rounded-3 nav-dropdown-item transition-all" href="#">
+                                <i class="fa-solid fa-address-card opacity-75"></i>
+                                <span class="small">Profile</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center gap-2 text-white-50 py-2.5 px-3 rounded-3 nav-dropdown-item transition-all" href="#">
+                                <i class="fa-solid fa-key opacity-75"></i>
+                                <span class="small">Change Password</span>
+                            </a>
+                        </li>
+                        <li class="mt-2 pt-2 border-top border-white border-opacity-10">
+                            <a class="dropdown-item d-flex align-items-center gap-2 text-danger py-2.5 px-3 rounded-3 nav-dropdown-item transition-all" href="#" id="navbar-logout-btn">
+                                <i class="fa-solid fa-right-from-bracket"></i>
+                                <span class="small fw-bold">Logout</span>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </div>
@@ -64,7 +116,7 @@
 <div id="mobileNav">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <div class="d-flex align-items-center">
-            <div class="bg-primary text-white rounded-3 d-flex align-items-center justify-content-center" style="width: 36px; height: 36px;">
+            <div class="bg-primary text-white rounded-3 d-flex align-items-center justify-content-center" style="width: 36px; height: 36px; background-color: var(--p-600) !important;">
                 <i class="bi bi-mortarboard-fill"></i>
             </div>
             <span class="fw-bold fs-5 ms-2 tracking-tight">Elevate</span>
@@ -74,23 +126,55 @@
     
     <div class="flex-grow-1 overflow-auto">
         <nav class="d-flex flex-column gap-1">
-            <a class="mobile-nav-link" href="/index.html">
-                <i class="bi bi-house-door"></i>
+            <!-- Guest-only Mobile Navigation Links -->
+            <a class="mobile-nav-link guest-nav-item" href="/index.html">
+                <i class="bi bi-house"></i>
                 <span>Home</span>
             </a>
-            <a class="mobile-nav-link" href="/pages/courses.html">
+            <a class="mobile-nav-link guest-nav-item" href="/pages/courses.html">
                 <i class="bi bi-book"></i>
                 <span>Courses</span>
             </a>
-            <a class="mobile-nav-link" href="/pages/about.html">
+            <a class="mobile-nav-link guest-nav-item" href="/pages/about.html">
                 <i class="bi bi-info-circle"></i>
-                <span>About</span>
+                <span>About Us</span>
             </a>
-            <a class="mobile-nav-link" href="/pages/contact.html">
-                <i class="bi bi-chat-dots"></i>
-                <span>Contact</span>
+            <a class="mobile-nav-link guest-nav-item" href="/pages/contact.html">
+                <i class="bi bi-envelope"></i>
+                <span>Contact Us</span>
+            </a>
+
+            <!-- Logged-in-only Mobile Navigation Links -->
+            <a class="mobile-nav-link auth-nav-item" href="/pages/courses.html">
+                <i class="bi bi-book"></i>
+                <span>Courses</span>
+            </a>
+            <a class="mobile-nav-link auth-nav-item link-item-my-learnings" href="/pages/my-learnings.html">
+                <i class="bi bi-collection-play-fill text-muted"></i>
+                <span>My Learnings</span>
+            </a>
+            <a class="mobile-nav-link auth-nav-item link-item-my-certs" href="/pages/my-certificates.html">
+                <i class="bi bi-patch-check-fill text-muted"></i>
+                <span>My Certificates</span>
             </a>
             
+            <!-- Mobile User Profile Details (Shown when logged in) -->
+            <div class="p-3 bg-light rounded-4 border border-light mt-4 d-none" id="mobileUserProfileSection">
+                <div class="d-flex align-items-center gap-3 mb-3">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200" alt="Avatar" class="rounded-circle border flex-shrink-0" style="width: 44px; height: 44px; object-fit: cover;">
+                    <div class="overflow-hidden ps-1" style="max-width: 170px;">
+                        <span class="text-muted text-uppercase fw-bold tracking-wider d-block" style="font-size: 0.6rem;">Logged In</span>
+                        <h6 class="fw-bold text-dark mb-0 text-truncate" id="mobile-nav-full-name">Guest Student</h6>
+                        <p class="text-muted text-truncate mb-0 x-small text-lowercase" id="mobile-nav-email">guest@example.com</p>
+                    </div>
+                </div>
+                <div class="d-flex flex-column gap-1 pt-2 border-top">
+                    <a class="mobile-nav-link py-1.5 px-2 font-sans text-muted" href="#" style="font-size: 0.85rem;"><i class="fa-solid fa-address-card opacity-75"></i> Profile</a>
+                    <a class="mobile-nav-link py-1.5 px-2 font-sans text-muted" href="#" style="font-size: 0.85rem;"><i class="fa-solid fa-key opacity-75"></i> Change Password</a>
+                    <a class="mobile-nav-link py-1.5 px-2 font-sans text-danger" href="#" id="mobile-navbar-logout-btn" style="font-size: 0.85rem;"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+                </div>
+            </div>
+
             <!-- Compact Premium Mobile Language Selector -->
             <div class="mt-4 px-3 py-2 bg-light rounded-4 border border-light" style="background: var(--s-50) !important;">
                 <p class="text-muted fw-bold mb-2 ps-1" style="font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;">Language / Bahasa</p>
@@ -106,11 +190,11 @@
         </nav>
     </div>
     
-    <div class="mt-auto">
+    <div class="mt-auto" id="mobileAuthButtons">
         <div class="mobile-divider"></div>
         <div class="d-flex flex-column gap-2">
-            <a class="btn btn-light border w-100" href="/pages/login.html">Login</a>
-            <a class="btn btn-primary w-100" href="/pages/register.html">Get Started</a>
+            <a class="btn btn-light border w-100 py-2 fw-medium" href="/pages/login.html" style="font-size: var(--fs-sm);">Sign In</a>
+            <a class="btn btn-primary w-100 py-2 fw-semibold" href="/pages/register.html" style="font-size: var(--fs-sm);">Join For Free</a>
         </div>
         <div class="text-center mt-3">
             <p class="text-muted x-small mb-0">Join 15,000+ professionals</p>

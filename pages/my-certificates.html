@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Certificates | Elevate Academy</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <style>
+        .certificate-card {
+            background: #ffffff;
+            border-radius: 20px;
+            border: 1px solid rgba(0,0,0,0.06);
+            overflow: hidden;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .certificate-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(15, 23, 42, 0.08) !important;
+            border-color: rgba(16, 185, 129, 0.2);
+        }
+        .cert-mockup-frame {
+            border: 12px double #c0a060;
+            background-color: #faf8f5;
+            padding: 24px;
+            position: relative;
+            box-shadow: inset 0 0 40px rgba(192,160,96,0.05);
+            font-family: 'Playfair Display', serif;
+        }
+        .cert-badge-gold {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #d4af37 0%, #aa7c11 100%);
+            border-radius: 50%;
+            position: relative;
+            box-shadow: 0 4px 10px rgba(170,124,17,0.3);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.25rem;
+        }
+        .font-serif {
+            font-family: 'Playfair Display', 'Times New Roman', serif !important;
+        }
+    </style>
+</head>
+<body class="bg-light-alt" style="background-color: var(--s-50); min-height: 100vh; display: flex; flex-direction: column;">
+
+    <!-- Header placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <main class="container py-5 flex-grow-1">
+        <!-- Locked State Placeholder (Shown if logged out) -->
+        <div id="locked-state" class="row justify-content-center d-none" style="margin-top: 5vh; margin-bottom: 5vh;">
+            <div class="col-lg-6 col-md-8 text-center">
+                <div class="card p-5 border-0 shadow-sm rounded-4 bg-white">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-light text-primary mb-4 shadow-sm" style="width: 80px; height: 80px; border: 1px solid rgba(124,58,237,0.1) !important;">
+                        <i class="fa-solid fa-lock fs-1 text-primary"></i>
+                    </div>
+                    <h3 class="fw-bold text-dark tracking-tight mb-2">Qualifications Locked</h3>
+                    <p class="text-muted small mx-auto mb-4" style="max-width: 380px;">
+                        Credentials, academic transcripts, and official share links are protected. Please sign in to verify your certificate vault.
+                    </p>
+                    <div class="d-grid gap-2 col-8 mx-auto">
+                        <a href="login.html" class="btn btn-primary py-2.5 fw-bold d-flex align-items-center justify-content-center gap-2 rounded-3">
+                            <i class="fa-solid fa-arrow-right-to-bracket"></i> Sign In to Account
+                        </a>
+                        <a href="courses.html" class="btn btn-outline-secondary py-2.5 fw-medium rounded-3 text-muted">
+                            Explore Curriculum
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Authorized Certificates Area (Shown if logged in) -->
+        <div id="authorized-certs-workspace" class="d-none">
+            <div class="row mb-4">
+                <div class="col-12 text-center text-md-start">
+                    <span class="badge px-3 py-1.5 bg-success bg-opacity-10 text-success rounded-pill fw-semibold mb-2.5" style="font-size: 0.7rem; border: 1px solid rgba(16, 185, 129, 0.15) !important;">
+                        <i class="fa-solid fa-medal me-1"></i> Verified Accreditations
+                    </span>
+                    <h2 class="fw-extrabold text-dark tracking-tight mb-1">Your Professional Credentials</h2>
+                    <p class="text-muted small">Official career certifications granted upon course evaluation completion. Ready to download and share.</p>
+                </div>
+            </div>
+
+            <!-- Cert Showcase Grid -->
+            <div class="row g-4">
+                <div class="col-12">
+                    <div class="card certificate-card shadow-sm p-4 bg-white mb-4">
+                        <div class="row g-4 align-items-center">
+                            <!-- Left: Certificate Beautiful Miniature Mockup -->
+                            <div class="col-lg-5 col-md-6">
+                                <div class="cert-mockup-frame rounded-2 shadow-sm d-flex flex-column align-items-center text-center p-4">
+                                    <div class="text-uppercase tracking-widest text-muted mb-2 font-serif" style="font-size: 0.5rem; letter-spacing: 0.2em;">Certificate of Completion</div>
+                                    <h6 class="font-serif fw-bold text-dark mb-3" style="font-size: 0.95rem;">Elevate Global Academy</h6>
+                                    
+                                    <div class="x-small text-muted mb-0.5" style="font-size: 0.55rem;">This credentials hereby verifies that</div>
+                                    <div class="font-serif fw-semibold italic text-dark border-bottom pb-1 mb-2 px-3 text-truncate w-100" style="font-size: 0.85rem; border-color: rgba(192,160,96,0.3) !important;">Guest Student</div>
+                                    
+                                    <div class="x-small text-muted mb-1" style="font-size: 0.55rem;">has fulfilled all mandatory exams to specialize in</div>
+                                    <h6 class="fw-bold text-dark font-serif mb-3 px-2 text-wrap" style="font-size: 0.75rem; color: #aa7c11 !important;">Generative AI & LLM Finetuning</h6>
+                                    
+                                    <div class="d-flex justify-content-between align-items-center w-100 mt-2 px-2 pt-2 border-top" style="border-top:1px dashed rgba(192,160,96,0.4) !important;">
+                                        <div class="text-start" style="font-size: 9px; line-height: 1.1;">
+                                            <span class="text-muted d-block">ID: CERT-AI-827493</span>
+                                            <span class="text-muted d-block">Date: May 15, 2026</span>
+                                        </div>
+                                        <div class="cert-badge-gold">
+                                            <i class="fa-solid fa-ribbon" style="font-size: 0.95rem;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right: Credential breakdown details -->
+                            <div class="col-lg-7 col-md-6">
+                                <div class="ps-md-3">
+                                    <span class="badge bg-success bg-opacity-10 text-emerald py-1 px-2.5 rounded-2 font-mono fw-bold mb-3" style="font-size: 0.65rem; border: 1px solid rgba(16,185,129,0.1) !important;">
+                                        STATUS: ISSUED & ACTIVE
+                                    </span>
+                                    <h4 class="fw-bold text-dark tracking-tight mb-2">Generative AI & LLM Finetuning Sandbox</h4>
+                                    <div class="row g-3 my-2 py-3 border-top border-bottom" style="border-color: rgba(0,0,0,0.06) !important;">
+                                        <div class="col-sm-6">
+                                            <span class="text-muted x-small d-block text-uppercase fw-bold tracking-wider" style="font-size: 0.6rem;">ISSUED AUTHORIZATION</span>
+                                            <span class="fw-bold text-dark small">Elevate Academy Board</span>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <span class="text-muted x-small d-block text-uppercase fw-bold tracking-wider" style="font-size: 0.6rem;">ISSUE DATE / EXPIRY</span>
+                                            <span class="fw-bold text-dark small">May 15, 2026 • Permanent</span>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <span class="text-muted x-small d-block text-uppercase fw-bold tracking-wider" style="font-size: 0.6rem;">VERIFICATION ID</span>
+                                            <span class="fw-semibold text-dark font-mono small text-uppercase">CERT-AI-827493</span>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <span class="text-muted x-small d-block text-uppercase fw-bold tracking-wider" style="font-size: 0.6rem;">SYLLABUS FOCUS</span>
+                                            <span class="fw-bold text-dark small">Neural network parameters & APIs</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Main Actions button -->
+                                    <div class="d-flex flex-wrap gap-2.5 mt-4">
+                                        <button class="btn btn-success px-4 py-2.5 fw-bold rounded-3 d-flex align-items-center gap-2 text-white border-0" style="background-color: #10b981 !important; box-shadow: 0 4px 14px rgba(16,185,129,0.2);" id="download-trigger-btn">
+                                            <i class="fa-solid fa-cloud-arrow-down"></i> Download PDF Certificate
+                                        </button>
+                                        <button class="btn btn-light border px-4 py-2.5 fw-medium text-dark rounded-3 d-flex align-items-center gap-1.5" id="share-trigger-btn">
+                                            <i class="fa-solid fa-arrow-up-from-bracket"></i> Share Credential
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/components.js"></script>
+    <script src="/js/main.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            // Check logged in state on dynamic module loading
+            const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+            if (isLoggedIn) {
+                $('#locked-state').addClass('d-none');
+                $('#authorized-certs-workspace').removeClass('d-none');
+            } else {
+                $('#locked-state').removeClass('d-none');
+                $('#authorized-certs-workspace').addClass('d-none');
+            }
+
+            // Standard mock interactive flow notifications
+            $('#download-trigger-btn').click(function() {
+                const btnOriginalText = $(this).html();
+                $(this).prop('disabled', true).html('<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Compiling High-Res PDF...');
+                
+                const $btn = $(this);
+                setTimeout(function() {
+                    $btn.html('<i class="fa-solid fa-check me-2 animate-bounce"></i>Downloaded successfully!');
+                    
+                    // Trigger actual virtual download payload
+                    const dummyLink = document.createElement("a");
+                    dummyLink.href = "data:text/plain;charset=utf-8," + encodeURIComponent("Official verified credentials PDF for student specialization CERT-AI-827493");
+                    dummyLink.download = "ELEVATE-ACADEMY-CERTIFICATE-AI-827493.txt";
+                    document.body.appendChild(dummyLink);
+                    dummyLink.click();
+                    document.body.removeChild(dummyLink);
+                    
+                    setTimeout(function() {
+                        $btn.prop('disabled', false).html(btnOriginalText);
+                    }, 2000);
+                }, 1500);
+            });
+
+            $('#share-trigger-btn').click(function() {
+                alert('Verification credentials link copied: https://elevate.academy/verify/CERT-AI-827493\n\nReady to post to LinkedIn Profile!');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -57,6 +57,42 @@ $(function() {
             }
         });
 
+        // Simulating the user details & premium login header states
+        const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+        if (isLoggedIn) {
+            $('#navbar-login-item, #navbar-register-item').addClass('d-none');
+            $('#mobileAuthButtons').addClass('d-none');
+            $('#userProfileDropdown, #mobileUserProfileSection').removeClass('d-none');
+            
+            // Toggle navigation menu visibility based on login status
+            $('.guest-nav-item').addClass('d-none');
+            $('.auth-nav-item').removeClass('d-none');
+            
+            // Standard demo user details as requested
+            const demoEmail = "verylongemailaddress@exampledomain.com";
+            const demoName = "Guest Student";
+            $('#nav-full-name, #mobile-nav-full-name').text(demoName);
+            $('#nav-email, #mobile-nav-email').text(demoEmail);
+        } else {
+            $('#navbar-login-item, #navbar-register-item').removeClass('d-none');
+            $('#mobileAuthButtons').removeClass('d-none');
+            $('#userProfileDropdown, #mobileUserProfileSection').addClass('d-none');
+            
+            // Toggle navigation menu visibility based on login status
+            $('.guest-nav-item').removeClass('d-none');
+            $('.auth-nav-item').addClass('d-none');
+        }
+
+        // Logout action flows
+        $('#navbar-logout-btn, #mobile-navbar-logout-btn').on('click', function(e) {
+            e.preventDefault();
+            localStorage.setItem('isLoggedIn', 'false');
+            $('body').css('opacity', '0.5');
+            setTimeout(function() {
+                window.location.href = '/index.html';
+            }, 300);
+        });
+
         // Language Selector Sync and Interactive UI
         const $langDropdown = $('#langDropdown');
         const $currentLangLabel = $('#currentLangLabel');
