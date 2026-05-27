@@ -100,16 +100,22 @@ $(function() {
 
         // Simulating the user details & premium login header states
         let userProfile = JSON.parse(localStorage.getItem('userProfile'));
+        const defaultAvatarUrl = "/images/default-avatar.svg";
+        const oldDefaultAvatar = "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200";
+
         if (!userProfile) {
             userProfile = {
                 fullName: "Guest Student",
                 email: "verylongemailaddress@exampledomain.com",
                 phone: "+60 12-345 6789",
-                avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200",
+                avatar: defaultAvatarUrl,
                 status: "Active Student",
                 joinedDate: "2026-01-15",
                 role: "Premium Learner"
             };
+            localStorage.setItem('userProfile', JSON.stringify(userProfile));
+        } else if (userProfile.avatar === oldDefaultAvatar) {
+            userProfile.avatar = defaultAvatarUrl;
             localStorage.setItem('userProfile', JSON.stringify(userProfile));
         }
 
