@@ -470,11 +470,11 @@
                                 <div class="col-lg-3 col-md-6 col-12 ps-lg-4">
                                     <div class="d-flex flex-column gap-1.5 py-1">
                                         <div class="d-flex align-items-center justify-content-between justify-content-lg-start gap-3">
-                                            <span class="text-muted text-uppercase fw-semibold" style="font-size: 0.65rem; min-width: 70px; letter-spacing: 0.05em;">Invoice:</span>
+                                            <span class="text-muted fw-semibold" style="font-size: 0.65rem; min-width: 70px; letter-spacing: 0.05em;">Invoice:</span>
                                             <span class="font-mono fw-bold text-dark small">#${item.id}</span>
                                         </div>
                                         <div class="d-flex align-items-center justify-content-between justify-content-lg-start gap-3">
-                                            <span class="text-muted text-uppercase fw-semibold" style="font-size: 0.65rem; min-width: 70px; letter-spacing: 0.05em;">Date:</span>
+                                            <span class="text-muted fw-semibold" style="font-size: 0.65rem; min-width: 70px; letter-spacing: 0.05em;">Date:</span>
                                             <span class="text-dark small fw-medium">${item.date}</span>
                                         </div>
                                     </div>
@@ -496,10 +496,7 @@
                                 <div class="col-lg-2 col-md-3 col-12 text-lg-end">
                                     <div class="d-flex flex-row flex-lg-column gap-2 justify-content-start justify-content-lg-end mt-2 mt-lg-0">
                                         <button class="btn btn-primary btn-premium-action py-2.5 download-bill-trigger flex-grow-1 flex-lg-grow-0 d-flex align-items-center justify-content-center gap-2 shadow-sm" data-inv="${item.id}">
-                                            <i class="fa-solid fa-download"></i> <span class="ms-1.5">Invoice</span>
-                                        </button>
-                                        <button class="btn btn-light border py-2.5 text-secondary fw-semibold btn-premium-action view-receipt-trigger flex-grow-1 flex-lg-grow-0 d-flex align-items-center justify-content-center gap-2" data-inv="${item.id}">
-                                            <i class="fa-solid fa-receipt"></i> <span class="ms-1.5">Receipt</span>
+                                            <i class="fa-solid fa-download"></i> <span class="ms-1.5">Receipt</span>
                                         </button>
                                     </div>
                                 </div>
@@ -537,8 +534,8 @@
                     $btn.html('<i class="fa-solid fa-check me-1"></i>Done!');
                     
                     const dummyLink = document.createElement("a");
-                    dummyLink.href = "data:text/plain;charset=utf-8," + encodeURIComponent("Official invoice document for transaction " + invoiceId + "\nProcessed via Secure Gateway.");
-                    dummyLink.download = "ELEVATE-ACADEMY-INVOICE-" + invoiceId + ".txt";
+                    dummyLink.href = "data:text/plain;charset=utf-8," + encodeURIComponent("Official receipt document for transaction " + invoiceId + "\nProcessed via Secure Gateway.");
+                    dummyLink.download = "ELEVATE-ACADEMY-RECEIPT-" + invoiceId + ".txt";
                     document.body.appendChild(dummyLink);
                     dummyLink.click();
                     document.body.removeChild(dummyLink);
