@@ -1023,11 +1023,12 @@ body.mobile-nav-active {
     right: -300px; /* Slimmer drawer */
     width: 300px;
     height: 100vh;
+    height: 100dvh;
     background: #fff;
     z-index: 1050;
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     box-shadow: -10px 0 30px rgba(0,0,0,0.05); /* Softer shadow */
-    padding: 1.5rem; /* More compact padding */
+    padding: 1.5rem 1.5rem calc(1.5rem + env(safe-area-inset-bottom, 16px)) 1.5rem; /* More compact padding with mobile safe area bottom */
     display: flex;
     flex-direction: column;
     border-radius: 0; /* Removed border-radius as requested */
